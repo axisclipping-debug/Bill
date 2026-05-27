@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="favicon.png">
+<title>Your Team Isn't The Problem. Your Structure Is. | Dr. Bill Harbron</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy:      #07091a;
+    --navy-mid:  #0e1228;
+    --navy-card: #111628;
+    --gold:      #c9a547;
+    --gold-lt:   #e8c96b;
+    --gold-dim:  rgba(201,165,71,0.13);
+    --gold-line: rgba(201,165,71,0.22);
+    --white:     #f5f3ee;
+    --gray:      #8a8fa8;
+    --gray-lt:   #b0b5c8;
+    --ff-disp:   'Cormorant Garamond', Georgia, serif;
+    --ff-body:   'Lato', sans-serif;
+    --max-w:     1100px;
+    --sp:        100px 24px;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--navy); color: var(--white); font-family: var(--ff-body); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+  body::before {
+    content: ''; position: fixed; inset: 0; opacity: 0.035; pointer-events: none; z-index: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+  }
+  section, header, footer, nav { position: relative; z-index: 1; }
+  h1,h2,h3 { font-family: var(--ff-disp); font-weight: 600; line-height: 1.1; }
+  p { color: var(--gray-lt); line-height: 1.75; }
+  p strong { color: var(--white); font-weight: 700; }
+  .label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); display: block; }
+  .gold-rule { display: block; width: 54px; height: 2px; background: linear-gradient(90deg, var(--gold), transparent); margin: 13px auto 24px; }
+  .gold-rule.left { margin-left: 0; }
+  .btn-primary { display: inline-block; background: var(--gold); color: #07091a; font-family: var(--ff-body); font-size: 0.84rem; font-weight: 900; letter-spacing: 0.14em; text-transform: uppercase; padding: 18px 44px; border: none; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+  .btn-primary:hover { background: var(--gold-lt); transform: translateY(-2px); }
+  .btn-ghost { display: inline-block; background: transparent; color: var(--gold); font-family: var(--ff-body); font-size: 0.84rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 15px 38px; border: 1px solid var(--gold); cursor: pointer; text-decoration: none; transition: background 0.2s, color 0.2s; }
+  .btn-ghost:hover { background: var(--gold); color: #07091a; }
+
+  /* NAV */
+  .site-nav { position: sticky; top: 0; z-index: 100; background: rgba(7,9,26,0.96); backdrop-filter: blur(14px); border-bottom: 1px solid var(--gold-line); padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; }
+  .nav-brand { font-family: var(--ff-disp); font-size: 1.05rem; font-weight: 600; letter-spacing: 0.05em; color: var(--white); text-decoration: none; }
+  .nav-brand span { color: var(--gold); }
+  .nav-cta { font-size: 0.74rem; padding: 12px 24px; }
+
+  /* HERO */
+  .hero-wrap { background: linear-gradient(135deg, #060817 0%, #0c1130 55%, #07091a 100%); min-height: 100vh; display: flex; align-items: center; }
+  .hero { max-width: var(--max-w); margin: 0 auto; padding: 100px 40px 80px; display: grid; grid-template-columns: 1fr 460px; gap: 60px; align-items: center; width: 100%; }
+  .hero h1 { font-size: clamp(2.4rem,5vw,4.2rem); font-style: italic; color: var(--white); margin: 12px 0 22px; }
+  .hero h1 em { font-style: normal; color: var(--gold); }
+  .hero-sub { font-size: 1.02rem; color: var(--gray-lt); line-height: 1.8; margin-bottom: 34px; max-width: 490px; }
+  .hero-proof { display: flex; gap: 32px; margin-top: 40px; padding-top: 26px; border-top: 1px solid var(--gold-line); }
+  .hero-proof-num { font-family: var(--ff-disp); font-size: 2.1rem; font-weight: 700; color: var(--gold); line-height: 1; display: block; }
+  .hero-proof-label { font-size: 0.66rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray); display: block; margin-top: 4px; }
+  .hero-img-frame { position: relative; width: 100%; }
+  .hero-img-frame::before { content: ''; position: absolute; top: -13px; right: -13px; bottom: 13px; left: 13px; border: 1px solid var(--gold-line); z-index: 0; pointer-events: none; }
+  .hero-img-frame img { width: 100%; height: 560px; object-fit: cover; object-position: top center; display: block; position: relative; z-index: 1; filter: grayscale(12%) contrast(1.06); }
+  .hero-badge { position: absolute; bottom: -16px; left: -16px; background: var(--gold); color: #07091a; padding: 15px 18px; z-index: 2; text-align: center; }
+  .hero-badge-num { font-family: var(--ff-disp); font-size: 1.9rem; font-weight: 700; line-height: 1; display: block; }
+  .hero-badge-label { font-size: 0.6rem; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; display: block; margin-top: 3px; }
+  @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+  .hero-copy { animation: fadeUp 0.7s ease both; }
+  .hero-img-frame { animation: fadeUp 0.7s 0.15s ease both; }
+
+  /* VSL */
+  .vsl-section { padding: 80px 24px; background: var(--navy-mid); border-top: 1px solid var(--gold-line); border-bottom: 1px solid var(--gold-line); }
+  .vsl-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+  .vsl-inner h2 { font-style: italic; margin: 10px 0 14px; font-size: clamp(1.8rem,3.5vw,2.8rem); }
+  .vsl-inner > p { font-size: 0.94rem; margin-bottom: 32px; max-width: 540px; margin-left: auto; margin-right: auto; }
+  .vsl-player { background: #000; border: 1px solid var(--gold-line); overflow: hidden; }
+  .vsl-player video { width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover; background: #000; }
+  .vsl-caption { font-size: 0.76rem; color: var(--gray); margin-top: 12px; font-style: italic; }
+
+  /* CREDENTIAL BAR */
+  .credential-bar { background: var(--navy); border-bottom: 1px solid var(--gold-line); padding: 24px 40px; }
+  .credential-inner { max-width: var(--max-w); margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
+  .credential-item { display: flex; align-items: center; gap: 9px; color: var(--gray); font-size: 0.76rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  .credential-item svg { color: var(--gold); flex-shrink: 0; }
+  .cred-div { width: 1px; height: 26px; background: var(--gold-line); }
+
+  /* PAIN POINTS */
+  .pain-section { padding: var(--sp); }
+  .si { max-width: var(--max-w); margin: 0 auto; }
+  .sh { text-align: center; margin-bottom: 56px; }
+  .sh h2 { margin-top: 10px; font-size: clamp(1.8rem,3.5vw,2.9rem); }
+  .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2px; border: 1px solid var(--gold-line); }
+  .pain-card { background: var(--navy-card); padding: 36px 32px; transition: background 0.2s; }
+  .pain-card:hover { background: #141930; }
+  .pain-icon { width: 42px; height: 42px; border: 1px solid var(--gold-line); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; color: var(--gold); }
+  .pain-card h3 { font-size: 1.1rem; color: var(--white); margin-bottom: 9px; font-style: italic; }
+  .pain-card p { font-size: 0.87rem; color: var(--gray); line-height: 1.7; }
+
+  /* BIO */
+  .bio-section { padding: var(--sp); background: var(--navy-mid); border-top: 1px solid var(--gold-line); border-bottom: 1px solid var(--gold-line); }
+  .bio-inner { max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .bio-img-wrap { position: relative; }
+  .bio-img-wrap img { width: 100%; height: 580px; object-fit: cover; object-position: center top; display: block; filter: grayscale(10%) contrast(1.04); }
+  .bio-accent-bar { position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--gold), transparent); }
+  .bio-accent-side { position: absolute; top: 0; right: 0; width: 3px; height: 40%; background: linear-gradient(180deg, var(--gold), transparent); }
+  .bio-copy h2 { margin-top: 10px; font-size: clamp(1.8rem,3.5vw,2.9rem); }
+  .bio-title { font-family: var(--ff-disp); font-size: 0.98rem; color: var(--gold); margin-bottom: 22px; font-style: italic; display: block; }
+  .bio-copy p { margin-bottom: 14px; font-size: 0.93rem; }
+  .bio-creds { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--gold-line); display: flex; flex-direction: column; gap: 10px; }
+  .bcr { display: flex; align-items: flex-start; gap: 11px; }
+  .bcd { width: 5px; height: 5px; background: var(--gold); border-radius: 50%; margin-top: 9px; flex-shrink: 0; }
+  .bct { font-size: 0.85rem; color: var(--gray-lt); line-height: 1.5; }
+
+  /* TRANSFORMATION */
+  .transform-section { padding: var(--sp); }
+  .transform-inner { max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .transform-left h2 { margin-top: 10px; font-style: italic; font-size: clamp(1.8rem,3.5vw,2.9rem); }
+  .transform-left p { margin-top: 16px; font-size: 0.93rem; }
+  .outcome-row { display: flex; gap: 18px; padding: 20px 0; border-bottom: 1px solid var(--gold-line); }
+  .outcome-row:first-child { border-top: 1px solid var(--gold-line); }
+  .outcome-num { font-family: var(--ff-disp); font-size: 1.7rem; font-weight: 700; color: var(--gold-dim); line-height: 1; width: 34px; flex-shrink: 0; padding-top: 4px; }
+  .outcome-content h3 { font-size: 0.98rem; color: var(--white); margin-bottom: 3px; font-style: italic; }
+  .outcome-content p { font-size: 0.83rem; color: var(--gray); line-height: 1.6; }
+
+  /* VIDEO TESTIMONIAL */
+  .vt-section { padding: var(--sp); background: var(--navy-mid); border-top: 1px solid var(--gold-line); border-bottom: 1px solid var(--gold-line); }
+  .vt-inner { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
+  .vt-video { border: 1px solid var(--gold-line); background: #000; overflow: hidden; }
+  .vt-video video { width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover; background: #000; }
+  .vt-copy h2 { font-style: italic; margin: 10px 0 18px; font-size: clamp(1.6rem,3vw,2.3rem); }
+  .vt-pullquote { font-family: var(--ff-disp); font-size: 1.08rem; font-style: italic; color: var(--gray-lt); line-height: 1.75; padding-left: 18px; border-left: 3px solid var(--gold); margin-bottom: 22px; }
+  .vt-attr { display: flex; align-items: center; gap: 12px; padding-top: 18px; border-top: 1px solid var(--gold-line); }
+  .vt-init { width: 38px; height: 38px; border-radius: 50%; background: var(--gold-dim); border: 1px solid var(--gold); display: flex; align-items: center; justify-content: center; font-family: var(--ff-disp); font-size: 0.95rem; font-weight: 600; color: var(--gold); flex-shrink: 0; }
+  .vt-name { font-size: 0.86rem; font-weight: 700; color: var(--white); display: block; }
+  .vt-title { font-size: 0.74rem; color: var(--gray); display: block; margin-top: 2px; }
+
+  /* TEXT TESTIMONIALS */
+  .testimonials-section { padding: var(--sp); }
+  .tgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 18px; margin-top: 48px; }
+  .tcard { background: var(--navy-card); padding: 36px 30px; border: 1px solid var(--gold-line); position: relative; }
+  .tcard::before { content: '\201C'; position: absolute; top: 14px; left: 26px; font-family: var(--ff-disp); font-size: 4rem; color: var(--gold); opacity: 0.13; line-height: 1; }
+  .ttext { font-family: var(--ff-disp); font-size: 1rem; font-style: italic; color: var(--gray-lt); line-height: 1.75; margin-bottom: 22px; position: relative; z-index: 1; }
+  .tauthor { display: flex; align-items: center; gap: 11px; padding-top: 18px; border-top: 1px solid var(--gold-line); }
+  .tinit { width: 40px; height: 40px; border-radius: 50%; background: var(--gold-dim); border: 1px solid var(--gold-line); display: flex; align-items: center; justify-content: center; font-family: var(--ff-disp); font-size: 0.95rem; font-weight: 600; color: var(--gold); flex-shrink: 0; }
+  .tname { font-size: 0.84rem; font-weight: 700; color: var(--white); display: block; }
+  .ttitle { font-size: 0.74rem; color: var(--gray); display: block; margin-top: 2px; }
+  .trust-logos { display: flex; align-items: center; justify-content: center; gap: 44px; margin-top: 56px; padding-top: 40px; border-top: 1px solid var(--gold-line); flex-wrap: wrap; }
+  .trust-label { font-size: 0.64rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray); }
+  .trust-logo-img { height: 28px; opacity: 0.5; filter: grayscale(1); transition: opacity 0.2s; }
+  .trust-logo-img:hover { opacity: 0.8; }
+
+  /* OFFER */
+  .offer-section { padding: var(--sp); background: var(--navy-mid); border-top: 1px solid var(--gold-line); }
+  .offer-inner { max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .offer-step { display: flex; gap: 20px; padding: 24px 0; border-bottom: 1px solid var(--gold-line); }
+  .offer-step:first-child { border-top: 1px solid var(--gold-line); }
+  .step-num { font-family: var(--ff-disp); font-size: 2.6rem; font-weight: 700; color: var(--gold); line-height: 1; flex-shrink: 0; width: 42px; }
+  .step-content h3 { font-size: 0.98rem; color: var(--white); margin-bottom: 4px; padding-top: 8px; }
+  .step-content p { font-size: 0.85rem; color: var(--gray); line-height: 1.65; }
+  .offer-right { padding-top: 10px; }
+  .offer-right h2 { font-style: italic; margin-bottom: 16px; font-size: clamp(1.8rem,3.5vw,2.7rem); }
+  .offer-right p { font-size: 0.93rem; margin-bottom: 16px; }
+  .offer-note { background: var(--gold-dim); border-left: 3px solid var(--gold); padding: 17px 20px; margin: 22px 0; }
+  .offer-note p { font-size: 0.85rem; color: var(--gray-lt); margin: 0; font-style: italic; }
+
+  /* FORM */
+  .form-section { padding: var(--sp); background: linear-gradient(180deg, var(--navy) 0%, #0a0e22 100%); border-top: 1px solid var(--gold-line); }
+  .form-inner { max-width: 640px; margin: 0 auto; text-align: center; }
+  .form-inner h2 { font-style: italic; margin: 10px 0 10px; font-size: clamp(1.8rem,3.5vw,2.7rem); }
+  .form-inner > p { margin-bottom: 40px; font-size: 0.93rem; }
+  .form-progress { display: flex; gap: 7px; justify-content: center; margin-bottom: 32px; }
+  .pdot { width: 34px; height: 3px; background: var(--navy-card); border: 1px solid var(--gold-line); transition: background 0.3s; }
+  .pdot.done { background: var(--gold); }
+  .form-step { display: none; }
+  .form-step.active { display: block; }
+  .fqlabel { font-family: var(--ff-disp); font-size: 1.35rem; font-weight: 600; font-style: italic; color: var(--white); margin-bottom: 22px; display: block; text-align: left; }
+  .fopts { display: flex; flex-direction: column; gap: 9px; }
+  .fopt { display: flex; align-items: center; gap: 13px; padding: 15px 20px; background: var(--navy-card); border: 1px solid var(--gold-line); cursor: pointer; transition: border-color 0.2s, background 0.2s; text-align: left; }
+  .fopt:hover { border-color: var(--gold); background: #141a2e; }
+  .fopt.selected { border-color: var(--gold); background: var(--gold-dim); }
+  .fopt input[type="radio"] { display: none; }
+  .find { width: 15px; height: 15px; border: 1px solid var(--gold); border-radius: 50%; flex-shrink: 0; position: relative; }
+  .fopt.selected .find::after { content: ''; position: absolute; inset: 3px; background: var(--gold); border-radius: 50%; }
+  .otxt { font-size: 0.9rem; color: var(--white); }
+  .fnext { width: 100%; margin-top: 18px; padding: 16px; background: var(--gold); color: #07091a; font-family: var(--ff-body); font-size: 0.8rem; font-weight: 900; letter-spacing: 0.16em; text-transform: uppercase; border: none; cursor: pointer; transition: background 0.2s; }
+  .fnext:hover { background: var(--gold-lt); }
+  .form-final, .form-disq { display: none; padding: 42px 0; text-align: center; }
+  .form-final.active, .form-disq.active { display: block; }
+  .qicon { width: 56px; height: 56px; background: var(--gold-dim); border: 1px solid var(--gold); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: var(--gold); }
+  .form-final h3 { font-family: var(--ff-disp); font-size: 1.6rem; font-style: italic; color: var(--white); margin-bottom: 13px; }
+  .form-final p { font-size: 0.91rem; margin-bottom: 26px; max-width: 440px; margin-left: auto; margin-right: auto; }
+  .form-disq h3 { font-family: var(--ff-disp); font-size: 1.45rem; font-style: italic; color: var(--white); margin-bottom: 13px; }
+  .form-disq p { font-size: 0.87rem; max-width: 400px; margin: 0 auto; }
+
+  /* INACTION */
+  .inaction-section { padding: 76px 24px; background: var(--navy-card); border-top: 3px solid var(--gold); border-bottom: 3px solid var(--gold); text-align: center; }
+  .inaction-inner { max-width: 660px; margin: 0 auto; }
+  .inaction-section h2 { font-style: italic; margin-bottom: 13px; color: var(--gold); font-size: clamp(1.8rem,3.5vw,2.7rem); }
+  .inaction-section > .inaction-inner > p { font-size: 0.96rem; margin-bottom: 34px; }
+  .ilist { display: flex; justify-content: center; gap: 44px; flex-wrap: wrap; margin-bottom: 38px; }
+  .inum { font-family: var(--ff-disp); font-size: 2.5rem; font-weight: 700; color: var(--gold); display: block; }
+  .ilabel { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray); }
+
+  /* FAQ */
+  .faq-section { padding: var(--sp); }
+  .faq-inner { max-width: 720px; margin: 0 auto; }
+  .faq-inner h2 { font-size: clamp(1.8rem,3.5vw,2.7rem); }
+  .faq-list { margin-top: 44px; }
+  .faq-item { border-top: 1px solid var(--gold-line); }
+  .faq-item:last-child { border-bottom: 1px solid var(--gold-line); }
+  .faq-trigger { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 21px 0; background: none; border: none; cursor: pointer; text-align: left; }
+  .faq-q { font-family: var(--ff-disp); font-size: 1.08rem; font-weight: 600; color: var(--white); line-height: 1.35; font-style: italic; }
+  .faq-arrow { width: 24px; height: 24px; border: 1px solid var(--gold-line); color: var(--gold); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.25s; }
+  .faq-item.open .faq-arrow { transform: rotate(45deg); }
+  .faq-answer { overflow: hidden; max-height: 0; transition: max-height 0.35s ease; }
+  .faq-answer-inner { padding: 0 0 22px; font-size: 0.91rem; color: var(--gray-lt); line-height: 1.75; }
+
+  /* FINAL CTA */
+  .final-cta-section { position: relative; background: var(--navy-mid); border-top: 1px solid var(--gold-line); overflow: hidden; }
+  .fcta-grid { max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: 1fr 400px; align-items: stretch; min-height: 480px; }
+  .fcta-copy { padding: 80px 56px 80px 0; border-right: 1px solid var(--gold-line); }
+  .fcta-copy h2 { font-size: clamp(1.9rem,3.5vw,2.9rem); font-style: italic; margin-top: 10px; margin-bottom: 16px; }
+  .fcta-copy p { font-size: 0.94rem; margin-bottom: 30px; }
+  .fcta-copy small { font-size: 0.76rem; color: var(--gray); display: block; margin-top: 13px; }
+  .fcta-img { overflow: hidden; position: relative; }
+  .fcta-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; filter: grayscale(20%) contrast(1.04); opacity: 0.72; }
+  .fcta-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(14,18,40,0.65) 0%, transparent 55%); }
+
+  /* FOOTER */
+  footer { background: #040510; border-top: 1px solid var(--gold-line); padding: 34px 24px; text-align: center; }
+  footer p { font-size: 0.77rem; color: var(--gray); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; padding: 76px 22px 56px; gap: 40px; }
+    .hero-img-frame { order: -1; }
+    .hero-img-frame img { height: 360px; }
+    .hero-proof { flex-wrap: wrap; gap: 22px; }
+    .bio-inner, .transform-inner, .offer-inner, .vt-inner, .fcta-grid { grid-template-columns: 1fr; gap: 36px; }
+    .fcta-copy { padding: 56px 0 36px; border-right: none; border-bottom: 1px solid var(--gold-line); }
+    .fcta-img { min-height: 280px; }
+    .site-nav { padding: 14px 18px; }
+    .cred-div { display: none; }
+    .credential-inner { gap: 18px; }
+    .ilist { gap: 26px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <a href="#" class="nav-brand">Dr. Bill Harbron <span>EdD</span></a>
+  <a href="#diagnosis" class="btn-primary nav-cta">Get My Free Diagnosis</a>
+</nav>
+
+<!-- ════════════ HERO ════════════
+  HARBRON_02__1_.jpeg  →  assets/images/harbron-headshot.jpg
+-->
+<div class="hero-wrap">
+  <div class="hero">
+    <div class="hero-copy">
+      <span class="label">Structural Leadership for Founders and CEOs</span>
+      <h1>Your team isn't the problem.<br><em>Your structure is.</em></h1>
+      <p class="hero-sub">Most Founders and CEOs are managing chaos they built. Dr. Bill Harbron diagnoses the structural root cause in 20 minutes and gives you a clear path to an organization that runs without you at the center of everything.</p>
+      <a href="#diagnosis" class="btn-primary">Get My Free Leadership Diagnosis</a>
+      <div class="hero-proof">
+        <div><span class="hero-proof-num">50+</span><span class="hero-proof-label">Years Leading</span></div>
+        <div><span class="hero-proof-num">20+</span><span class="hero-proof-label">Years as Superintendent</span></div>
+        <div><span class="hero-proof-num">EdD</span><span class="hero-proof-label">Doctorate Earned</span></div>
+      </div>
+    </div>
+    <div class="hero-img-frame">
+      <!-- FILE: HARBRON_02__1_.jpeg → assets/images/harbron-headshot.jpg -->
+      <img src="assets/images/harbron-headshot.jpg" alt="Dr. Bill Harbron, EdD">
+      <div class="hero-badge">
+        <span class="hero-badge-num">20 min</span>
+        <span class="hero-badge-label">Free Diagnosis Call</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ VSL ════════════
+  IMG_8772.mov → assets/video/vsl.mp4
+  ⚠️ MUST CONVERT before deploy:
+  ffmpeg -i IMG_8772.mov -c:v libx264 -crf 22 -preset slow -c:a aac assets/video/vsl.mp4
+-->
+<section class="vsl-section">
+  <div class="vsl-inner">
+    <span class="label">Watch Before You Book</span>
+    <span class="gold-rule"></span>
+    <h2>Why structural leadership<br>is the only lever that scales</h2>
+    <p>Before you book your diagnosis call, watch this. It will give you a precise understanding of what structural leadership is, what it is not, and whether this conversation is worth your time.</p>
+    <div class="vsl-player">
+      <video controls playsinline preload="metadata">
+        <source src="assets/video/vsl.mp4" type="video/mp4">
+        Your browser does not support embedded video. Please update your browser.
+      </video>
+    </div>
+    <p class="vsl-caption">Dr. Bill Harbron, EdD &mdash; Structural Leadership Overview</p>
+  </div>
+</section>
+
+<!-- CREDENTIAL BAR -->
+<div class="credential-bar">
+  <div class="credential-inner">
+    <div class="credential-item">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-7 10 7-10 7z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      EdD in Organizational Leadership
+    </div>
+    <div class="cred-div"></div>
+    <div class="credential-item">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+      20+ Years as Superintendent
+    </div>
+    <div class="cred-div"></div>
+    <div class="credential-item">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      50+ Years Organizational Leadership
+    </div>
+    <div class="cred-div"></div>
+    <div class="credential-item">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+      Inspired Leadership Trained
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ PAIN POINTS ════════════ -->
+<section class="pain-section">
+  <div class="si">
+    <div class="sh">
+      <span class="label">Does This Sound Like You?</span>
+      <span class="gold-rule"></span>
+      <h2>The symptoms are obvious.<br>The <em style="font-style:italic;color:var(--gold);">cause</em> is structural.</h2>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-icon"><svg width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+        <h3>Every decision runs through you</h3>
+        <p>Your team is capable and completely dependent on your approval. You are not the leader of the organization. You are its bottleneck.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon"><svg width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Your managers talk. Nobody decides.</h3>
+        <p>Meetings happen. Status gets shared. Then everyone waits for you. The management layer exists in title only.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon"><svg width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <h3>You are firefighting, not building</h3>
+        <p>Your calendar is a sequence of urgent problems that should never have reached you. The strategic work you started this company to do has become a rumor.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon"><svg width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M2 20h.01M7 20v-4"/><path d="M12 20v-8"/><path d="M17 20V8"/><path d="M22 4v16"/></svg></div>
+        <h3>Nobody knows what excellent looks like</h3>
+        <p>There is no shared standard for performance. Accountability exists as a concept but not as a system. You chase outcomes instead of measuring them automatically.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon"><svg width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        <h3>You hired more people and created more chaos</h3>
+        <p>Headcount went up. Complexity went up faster. More people in a broken structure produces more broken outcomes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ BIO ════════════
+  1771335754131.jpeg  →  assets/images/harbron-casual-home.jpg
+-->
+<section class="bio-section">
+  <div class="bio-inner">
+    <div class="bio-img-wrap">
+      <!-- FILE: 1771335754131.jpeg → assets/images/harbron-casual-home.jpg -->
+      <img src="assets/images/harbron-casual-home.jpg" alt="Dr. Bill Harbron at home">
+      <div class="bio-accent-bar"></div>
+      <div class="bio-accent-side"></div>
+    </div>
+    <div class="bio-copy">
+      <span class="label">Who Is Dr. Bill Harbron?</span>
+      <span class="gold-rule left"></span>
+      <h2>50 years of leading<br>complex organizations</h2>
+      <span class="bio-title">EdD, Organizational Leadership and Administration</span>
+      <p>Bill Harbron spent over two decades as a Superintendent, responsible for the full architecture of large, multi-layered institutions. Budgets, personnel, governance structures, board accountability, and community trust. Not theory. Operational reality at scale.</p>
+      <p>He has coached and developed dozens of senior leaders across sectors. His diagnostic approach cuts through symptoms to identify structural root causes quickly because he has seen every variation of organizational dysfunction that exists.</p>
+      <p>He is not a mindset coach. He is not a motivational speaker. He is a structural diagnostician who has spent 50 years building, breaking, and fixing organizations from the inside.</p>
+      <div class="bio-creds">
+        <div class="bcr"><span class="bcd"></span><span class="bct">Doctor of Education in Organizational Leadership and Administration</span></div>
+        <div class="bcr"><span class="bcd"></span><span class="bct">20+ years as Superintendent overseeing complex, multi-stakeholder institutions</span></div>
+        <div class="bcr"><span class="bcd"></span><span class="bct">Trained in Inspired Leadership, emotional intelligence, and resonant leadership frameworks</span></div>
+        <div class="bcr"><span class="bcd"></span><span class="bct">Coached senior leaders across education, nonprofits, and community institutions</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ TRANSFORMATION ════════════ -->
+<section class="transform-section">
+  <div class="transform-inner">
+    <div class="transform-left">
+      <span class="label">What Actually Changes</span>
+      <span class="gold-rule left"></span>
+      <h2>From chaos<br>to structural leverage</h2>
+      <p>The goal is not to make you a better leader. It is to build an organization that does not require you to be present for every decision. Here is what changes after a structural engagement with Bill.</p>
+      <br>
+      <a href="#diagnosis" class="btn-ghost" style="margin-top:14px;">Claim Your Free Diagnosis</a>
+    </div>
+    <div>
+      <div class="outcome-row"><span class="outcome-num">01</span><div class="outcome-content"><h3>Decisions get made without you</h3><p>Clear decision authorities replace you as the default approver. Your team stops waiting and starts acting.</p></div></div>
+      <div class="outcome-row"><span class="outcome-num">02</span><div class="outcome-content"><h3>Accountability runs automatically</h3><p>Performance standards are defined and measured. You stop chasing outcomes and start reviewing them.</p></div></div>
+      <div class="outcome-row"><span class="outcome-num">03</span><div class="outcome-content"><h3>Your calendar reflects your actual role</h3><p>Firefighting drops because the structural conditions that created fires have been redesigned.</p></div></div>
+      <div class="outcome-row"><span class="outcome-num">04</span><div class="outcome-content"><h3>Your management layer actually manages</h3><p>Managers have clear charters, decision authorities, and accountability to lead their domains independently.</p></div></div>
+      <div class="outcome-row"><span class="outcome-num">05</span><div class="outcome-content"><h3>Scaling becomes structurally possible</h3><p>Growth no longer overwhelms a system built for your personal involvement. The structure scales.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ VIDEO TESTIMONIAL ════════════
+  Dr__Harbron_Testimonial.mp4  →  assets/video/dr-harbron-testimonial.mp4
+  This file is already MP4. No conversion needed.
+-->
+<section class="vt-section">
+  <div class="vt-inner">
+    <div class="vt-video">
+      <!-- FILE: Dr__Harbron_Testimonial.mp4 → assets/video/dr-harbron-testimonial.mp4 -->
+      <video controls playsinline preload="metadata">
+        <source src="assets/video/dr-harbron-testimonial.mp4" type="video/mp4">
+        Your browser does not support embedded video.
+      </video>
+    </div>
+    <div class="vt-copy">
+      <span class="label">In Their Own Words</span>
+      <span class="gold-rule left"></span>
+      <h2>Hear directly from a leader Bill has worked with</h2>
+      <div class="vt-pullquote">
+        "He listens not just to the words spoken, but to the underlying values and anxieties. This creates a psychological safety that leads to more authentic professional breakthroughs."
+      </div>
+      <div class="vt-attr">
+        <div class="vt-init">PD</div>
+        <div>
+          <span class="vt-name">Peter Driscoll</span>
+          <span class="vt-title">High School Principal &mdash; 7 years under Bill's direct mentorship</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ TEXT TESTIMONIALS ════════════ -->
+<section class="testimonials-section">
+  <div class="si">
+    <div class="sh">
+      <span class="label">What Leaders Say</span>
+      <span class="gold-rule"></span>
+      <h2>Structural change leaves<br>a clear record</h2>
+    </div>
+    <div class="tgrid">
+      <div class="tcard">
+        <p class="ttext">"His depth of knowledge is evident, but what truly sets him apart is his ability to translate that expertise into practical, actionable strategies. Each session left me with clear tools to enhance productivity, improve decision-making, and lead with greater intention."</p>
+        <div class="tauthor"><div class="tinit">KK</div><div><span class="tname">Korie Kennedy</span><span class="ttitle">CTE Director, Dover New Hampshire</span></div></div>
+      </div>
+      <div class="tcard">
+        <p class="ttext">"Bill embodies what true relational leadership looks like in practice. What sets him apart is his commitment to continuous learning while simultaneously lifting others. He listens, supports, challenges, and encourages in ways that have had a lasting impact on my leadership."</p>
+        <div class="tauthor"><div class="tinit">CE</div><div><span class="tname">Carolyn Eastman</span><span class="ttitle">Founder and Advisor, EdConnect NH and Future Ready Solutions Collective</span></div></div>
+      </div>
+      <div class="tcard">
+        <p class="ttext">"Bill possesses a keen intellectual orientation that allows him to synthesize complex theories into practical, human-centered strategies. He coaches leaders to look three to five years down the horizon, ensuring that current decisions align with a long-term direction."</p>
+        <div class="tauthor"><div class="tinit">PD</div><div><span class="tname">Peter Driscoll</span><span class="ttitle">High School Principal &mdash; 7 years under Bill's mentorship</span></div></div>
+      </div>
+    </div>
+    <div class="trust-logos">
+      <span class="trust-label">As featured by</span>
+      <!-- assets/images/edconnect-nh-logo.png -->
+      <img src="assets/images/edconnect-nh-logo.png" alt="EdConnect NH" class="trust-logo-img" onerror="this.style.display='none'">
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ OFFER ════════════ -->
+<section class="offer-section">
+  <div class="offer-inner">
+    <div class="offer-right">
+      <span class="label">The Free Leadership Diagnosis</span>
+      <span class="gold-rule left"></span>
+      <h2>20 minutes. One conversation.<br>A clear path forward.</h2>
+      <p>This is not a sales call framed as a consultation. It is a structured diagnostic session. Bill will identify the root cause of your leadership friction in real time. You will leave with a specific, actionable assessment of what is broken and what fixing it requires.</p>
+      <p>If working together is a fit, he will tell you. If it is not, he will tell you that too. No pressure. No pitch.</p>
+      <div class="offer-note">
+        <p>"He coaches from the belief that a leader's internal state directly dictates the climate of their organization. He is a visionary strategist who helps leaders look three to five years down the horizon." &mdash; Peter Driscoll, Dover High School Principal</p>
+      </div>
+      <a href="#diagnosis" class="btn-primary">Book My Free 20-Minute Call</a>
+    </div>
+    <div>
+      <div class="offer-step"><span class="step-num">1</span><div class="step-content"><h3>You describe your situation</h3><p>Tell Bill what is actually happening. The friction, the decisions not being made, the dynamics that drain you.</p></div></div>
+      <div class="offer-step"><span class="step-num">2</span><div class="step-content"><h3>Bill diagnoses the root cause</h3><p>He identifies the structural fault in real time. Not a generic framework. A specific diagnosis of your situation.</p></div></div>
+      <div class="offer-step"><span class="step-num">3</span><div class="step-content"><h3>You get a clear path forward</h3><p>Whether you work together or not, you leave knowing exactly what structural change is required and why.</p></div></div>
+      <div class="offer-step"><span class="step-num">4</span><div class="step-content"><h3>Honest assessment of fit</h3><p>Bill works with a small number of clients at any one time. If your timeline is the right match, you will hear an honest case for next steps.</p></div></div>
+      <div class="offer-step"><span class="step-num">5</span><div class="step-content"><h3>Zero pressure, always</h3><p>If it is not the right fit, Bill will say so directly. This conversation exists to serve your clarity, not to close a sale.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ QUALIFIER FORM ════════════ -->
+<section class="form-section" id="diagnosis">
+  <div class="form-inner">
+    <span class="label">Apply for Your Free Diagnosis</span>
+    <span class="gold-rule"></span>
+    <h2>Three quick questions before we talk</h2>
+    <p>Answer honestly. The goal is to make sure this call is valuable for both of you before either of you invests time in it.</p>
+    <div class="form-progress">
+      <div class="pdot done" id="d1"></div>
+      <div class="pdot" id="d2"></div>
+      <div class="pdot" id="d3"></div>
+    </div>
+
+    <div class="form-step active" id="s1">
+      <span class="fqlabel">How large is your team right now?</span>
+      <div class="fopts" id="o1">
+        <label class="fopt"><input type="radio" name="ts" value="small"><span class="find"></span><span class="otxt">Fewer than 10 people</span></label>
+        <label class="fopt"><input type="radio" name="ts" value="medium"><span class="find"></span><span class="otxt">10 to 50 people</span></label>
+        <label class="fopt"><input type="radio" name="ts" value="large"><span class="find"></span><span class="otxt">50 to 200 people</span></label>
+        <label class="fopt"><input type="radio" name="ts" value="enterprise"><span class="find"></span><span class="otxt">Over 200 people</span></label>
+      </div>
+      <button class="fnext" onclick="adv(1)">Continue &rarr;</button>
+    </div>
+
+    <div class="form-step" id="s2">
+      <span class="fqlabel">What is your most pressing leadership challenge right now?</span>
+      <div class="fopts" id="o2">
+        <label class="fopt"><input type="radio" name="ch" value="bottleneck"><span class="find"></span><span class="otxt">Decision bottlenecks &mdash; everything flows through me</span></label>
+        <label class="fopt"><input type="radio" name="ch" value="accountability"><span class="find"></span><span class="otxt">Accountability gaps &mdash; performance standards do not exist or are not enforced</span></label>
+        <label class="fopt"><input type="radio" name="ch" value="scaling"><span class="find"></span><span class="otxt">Scaling the team &mdash; growth is creating more chaos, not more capacity</span></label>
+        <label class="fopt"><input type="radio" name="ch" value="all"><span class="find"></span><span class="otxt">All of the above</span></label>
+      </div>
+      <button class="fnext" onclick="adv(2)">Continue &rarr;</button>
+    </div>
+
+    <div class="form-step" id="s3">
+      <span class="fqlabel">When are you looking to make a structural change?</span>
+      <div class="fopts" id="o3">
+        <label class="fopt"><input type="radio" name="tl" value="now"><span class="find"></span><span class="otxt">Now &mdash; I need this solved immediately</span></label>
+        <label class="fopt"><input type="radio" name="tl" value="90"><span class="find"></span><span class="otxt">Within the next 90 days</span></label>
+        <label class="fopt"><input type="radio" name="tl" value="exploring"><span class="find"></span><span class="otxt">I am just exploring options right now</span></label>
+      </div>
+      <button class="fnext" onclick="adv(3)">See My Result &rarr;</button>
+    </div>
+
+    <div class="form-final" id="fq">
+      <div class="qicon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <h3>You are a strong candidate for a Free Leadership Diagnosis.</h3>
+      <p>The structural challenges you described are exactly what this conversation is designed to address. Bill has direct experience diagnosing and resolving what you are facing. Click below to book your 20-minute call.</p>
+      <!-- ⚠️ REPLACE WITH YOUR ACTUAL BOOKING LINK -->
+      <a href="https://calendly.com/bill-harbron/diagnosis" target="_blank" class="btn-primary">Book My Free 20-Minute Call</a>
+    </div>
+
+    <div class="form-disq" id="fd">
+      <h3>This may not be the right fit just yet.</h3>
+      <p>Structural Leadership delivers the most value when organizational complexity genuinely exists. If your team is under 10 or you are in early exploration, we would rather be honest with you now than waste your time on a call that cannot deliver value. If your situation changes, this page will still be here.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ INACTION ════════════ -->
+<section class="inaction-section">
+  <div class="inaction-inner">
+    <span class="label">The Cost of Waiting</span>
+    <h2>Every Week You Wait, It Costs You</h2>
+    <p>Structural problems compound. They do not plateau and wait for you to address them. The longer your organization runs on a broken architecture, the more entrenched the dysfunction becomes.</p>
+    <div class="ilist">
+      <div><span class="inum">8</span><span class="ilabel">Week Engagement</span></div>
+      <div><span class="inum">60-90</span><span class="ilabel">Minutes Per Week</span></div>
+      <div><span class="inum">20</span><span class="ilabel">Minute Diagnosis Call</span></div>
+    </div>
+    <a href="#diagnosis" class="btn-primary">Get My Free Leadership Diagnosis</a>
+  </div>
+</section>
+
+<!-- ════════════ FAQ ════════════ -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <span class="label">Common Questions</span>
+    <span class="gold-rule left"></span>
+    <h2>Honest answers to the questions you actually have</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="tfaq(this)"><span class="faq-q">How is this different from executive coaching?</span><span class="faq-arrow"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Traditional executive coaching focuses on your mindset, your habits, and your behavioral patterns. It operates on the assumption that the leader is the problem. Structural Leadership operates on the assumption that the architecture is the problem. Bill does not coach you to journal more or think differently. He diagnoses the decision flows, accountability systems, and delegation structures in your organization and shows you specifically what to change.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="tfaq(this)"><span class="faq-q">What industries does Bill work with?</span><span class="faq-arrow"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">All of them. Structure is universal. Whether you run a SaaS company, a professional services firm, a distribution operation, or a nonprofit, the same principles govern how decisions get made, how accountability propagates, and how delegation architecture either works or fails. The structural problems Bill diagnoses appear across every industry in nearly identical forms. Only the surface details change.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="tfaq(this)"><span class="faq-q">How much time does this actually require?</span><span class="faq-arrow"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Roughly 60 to 90 minutes per week across an 8-week engagement. The work is designed around your schedule, because the structural changes you implement will recover far more than that in your calendar once they are in place.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="tfaq(this)"><span class="faq-q">What happens after the 8 weeks?</span><span class="faq-arrow"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">The systems run without Bill. That is the entire point of the engagement. If the structural changes require Bill's continued presence to function, the engagement failed. The goal is to build something durable and self-sustaining before the 8 weeks are finished.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="tfaq(this)"><span class="faq-q">What if my situation is too complex for a 20-minute call?</span><span class="faq-arrow"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">50 years of organizational experience covers a great deal of complexity. If the situation genuinely falls outside what Bill can help with, he will tell you that directly on the call and point you toward what he believes would actually serve you. Nothing about this conversation commits you to anything.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ FINAL CTA ════════════
+  IMG_5039.jpeg  →  assets/images/harbron-outdoor.jpg
+-->
+<section class="final-cta-section">
+  <div class="fcta-grid">
+    <div class="fcta-copy" style="padding-left: 0;">
+      <span class="label">Your Move</span>
+      <span class="gold-rule left"></span>
+      <h2>The structure is fixable.<br><em style="font-style:italic;color:var(--gold);">The question is when.</em></h2>
+      <p>The chaos you are managing is not a leadership character flaw. It is a structural design problem. That means it is solvable with the right diagnosis. Twenty minutes is all it takes to know exactly what you are dealing with and what fixing it requires.</p>
+      <a href="#diagnosis" class="btn-primary">Get My Free Leadership Diagnosis</a>
+      <small>No pressure. No pitch. A structured 20-minute diagnostic conversation.</small>
+    </div>
+    <div class="fcta-img">
+      <!-- FILE: IMG_5039.jpeg → assets/images/harbron-outdoor.jpg -->
+      <img src="assets/images/harbron-outdoor.jpg" alt="Dr. Bill Harbron">
+      <div class="fcta-overlay"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p style="margin-bottom:7px;font-family:var(--ff-disp);font-size:0.98rem;color:var(--white);">Dr. William "Bill" Harbron, EdD</p>
+  <p style="margin-bottom:12px;">WRH Coaching and Consulting LLC &nbsp;&bull;&nbsp; <a href="https://becomeabetterleader.online" style="color:var(--gold);text-decoration:none;">becomeabetterleader.online</a></p>
+  <p>&copy; 2025 WRH Coaching and Consulting LLC. All rights reserved.</p>
+</footer>
+
+<script>
+  var ans = {};
+  var names = ['','ts','ch','tl'];
+
+  function adv(step) {
+    var sel = false;
+    document.querySelectorAll('#o'+step+' .fopt').forEach(function(o){ if(o.classList.contains('selected')) sel=true; });
+    if(!sel){ alert('Please select an answer to continue.'); return; }
+    var inp = document.querySelector('[name="'+names[step]+'"]:checked');
+    if(inp) ans['s'+step] = inp.value;
+    if(step < 3) {
+      document.getElementById('s'+step).classList.remove('active');
+      document.getElementById('s'+(step+1)).classList.add('active');
+      document.getElementById('d'+(step+1)).classList.add('done');
+    } else {
+      document.getElementById('s3').classList.remove('active');
+      var disq = (ans.s1==='small') || (ans.s3==='exploring');
+      document.getElementById(disq?'fd':'fq').classList.add('active');
+    }
+  }
+
+  document.querySelectorAll('.fopt').forEach(function(opt){
+    opt.addEventListener('click', function(){
+      this.closest('.fopts').querySelectorAll('.fopt').forEach(function(o){ o.classList.remove('selected'); });
+      this.classList.add('selected');
+      this.querySelector('input').checked = true;
+    });
+  });
+
+  function tfaq(btn) {
+    var item = btn.closest('.faq-item');
+    var ans = item.querySelector('.faq-answer');
+    var open = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(function(i){ i.classList.remove('open'); i.querySelector('.faq-answer').style.maxHeight='0'; });
+    if(!open){ item.classList.add('open'); ans.style.maxHeight = ans.scrollHeight+'px'; }
+  }
+</script>
+</body>
+</html>
