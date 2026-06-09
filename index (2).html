@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Leadership Clarity & Alignment Audit | In 60 Minutes</title>
+    <meta name="description" content="Identify the leadership bottlenecks slowing your team, decision-making, and growth. Free 60-minute audit for CEOs & Founders leading 10-250 employee companies.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '5427030497522293');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=5427030497522293&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <style>
+        :root {
+            --bg-dark: #0a1028;
+            --bg-card: rgba(18, 28, 60, 0.7);
+            --bg-card-hover: rgba(26, 38, 74, 0.85);
+            --border-glow: rgba(201, 161, 76, 0.15);
+            --border-glow-hover: rgba(201, 161, 76, 0.35);
+            --primary: #c9a14c;
+            --primary-hover: #ad8730;
+            --primary-glow: rgba(201, 161, 76, 0.5);
+            --secondary: #d4af5f;
+            --secondary-hover: #c0993f;
+            --secondary-glow: rgba(212, 175, 95, 0.4);
+            --text-main: #f4f1ea;
+            --text-muted: #97a1bd;
+            --text-dark: #5a6488;
+            --white: #ffffff;
+            --success: #10b981;
+            --error: #ef4444;
+            --warning: #f59e0b;
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image:
+                radial-gradient(circle at 10% 20%, rgba(201, 161, 76, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(212, 175, 95, 0.08) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
+        h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.02em; color: var(--white); }
+        p { color: var(--text-muted); font-size: 1rem; }
+        .gradient-text { background: linear-gradient(135deg, #fff 30%, var(--primary) 70%, var(--secondary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .gradient-accent-text { background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .section-padding { padding: 100px 0; }
+        .text-center { text-align: center; }
+        .glass-card { background: var(--bg-card); border: 1px solid var(--border-glow); backdrop-filter: blur(12px); border-radius: 16px; padding: 32px; transition: var(--transition-smooth); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); }
+        .glass-card:hover { border-color: var(--border-glow-hover); transform: translateY(-4px); box-shadow: 0 12px 40px 0 rgba(201, 161, 76, 0.1); }
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 28px; font-family: var(--font-display); font-size: 1rem; font-weight: 600; border-radius: 8px; border: none; cursor: pointer; transition: var(--transition-smooth); text-decoration: none; gap: 10px; }
+        .btn-primary { background: linear-gradient(135deg, var(--primary) 0%, #ad8730 100%); color: var(--bg-dark); box-shadow: 0 4px 20px var(--primary-glow); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(201, 161, 76, 0.7); background: linear-gradient(135deg, #ad8730 0%, #927124 100%); }
+        .btn-secondary { background: transparent; border: 1px solid rgba(255, 255, 255, 0.2); color: var(--white); }
+        .btn-secondary:hover { background: rgba(255, 255, 255, 0.05); border-color: var(--white); transform: translateY(-2px); }
+        .btn-teal { background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-hover) 100%); color: var(--bg-dark); box-shadow: 0 4px 20px var(--secondary-glow); }
+        .btn-teal:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(212, 175, 95, 0.7); }
+        header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(10, 16, 40, 0.7); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); padding: 18px 0; }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: var(--font-display); font-weight: 800; font-size: 1.3rem; color: var(--white); text-decoration: none; letter-spacing: 0.05em; display: flex; align-items: center; gap: 8px; }
+        .logo span { color: var(--primary); }
+        .logo-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--secondary); display: inline-block; }
+        .nav-tag { background: rgba(201, 161, 76, 0.1); border: 1px solid rgba(201, 161, 76, 0.3); color: var(--primary); font-size: 0.75rem; font-weight: 600; padding: 4px 12px; border-radius: 99px; font-family: var(--font-display); letter-spacing: 0.03em; }
+        .nav-cta { display: flex; align-items: center; gap: 16px; }
+        .hero { padding: 160px 0 100px 0; position: relative; overflow: hidden; }
+        .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; }
+        .hero-badge { background: rgba(212, 175, 95, 0.1); border: 1px solid rgba(212, 175, 95, 0.3); color: var(--secondary); font-size: 0.8rem; font-weight: 600; padding: 6px 16px; border-radius: 99px; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; font-family: var(--font-display); letter-spacing: 0.05em; text-transform: uppercase; }
+        .hero h1 { font-size: 3.5rem; line-height: 1.15; margin-bottom: 24px; }
+        .hero p.lead { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 36px; max-width: 600px; }
+        .hero-ctas { display: flex; gap: 16px; margin-bottom: 40px; flex-wrap: wrap; }
+        .hero-bullets { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .hero-bullet { display: flex; align-items: center; gap: 12px; font-size: 0.9rem; color: var(--text-main); }
+        .hero-bullet svg { width: 20px; height: 20px; color: var(--secondary); flex-shrink: 0; }
+        .hero-right-container { position: relative; }
+        .glow-sphere { position: absolute; width: 300px; height: 300px; background: var(--primary-glow); border-radius: 50%; filter: blur(80px); z-index: 1; top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none; }
+        .hero-calculator { position: relative; z-index: 2; background: linear-gradient(145deg, rgba(20, 30, 66, 0.9) 0%, rgba(10, 16, 40, 0.95) 100%); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; padding: 36px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); }
+        .hero-calculator h3 { font-size: 1.4rem; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+        .hero-calculator p.subtitle { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 24px; }
+        .calc-row { margin-bottom: 20px; }
+        .calc-label { display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 600; color: var(--text-main); margin-bottom: 8px; }
+        .calc-label span.value { color: var(--secondary); }
+        .range-slider { -webkit-appearance: none; width: 100%; height: 6px; border-radius: 99px; background: rgba(255, 255, 255, 0.1); outline: none; margin: 8px 0; }
+        .range-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 18px; height: 18px; border-radius: 50%; background: var(--secondary); cursor: pointer; transition: var(--transition-smooth); box-shadow: 0 0 10px var(--secondary-glow); }
+        .range-slider::-webkit-slider-thumb:hover { transform: scale(1.25); background: var(--white); }
+        .friction-selector { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 6px; }
+        .friction-btn { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 10px; color: var(--text-muted); cursor: pointer; font-family: var(--font-body); font-size: 0.8rem; font-weight: 500; transition: var(--transition-smooth); text-align: center; }
+        .friction-btn.active { background: rgba(201, 161, 76, 0.15); border-color: var(--primary); color: var(--white); box-shadow: 0 0 12px rgba(201, 161, 76, 0.2); }
+        .calc-result-box { background: rgba(212, 175, 95, 0.04); border: 1px dashed rgba(212, 175, 95, 0.2); border-radius: 12px; padding: 20px; margin: 24px 0; text-align: center; }
+        .calc-result-val { font-family: var(--font-display); font-size: 2.2rem; font-weight: 800; color: var(--secondary); line-height: 1.1; margin-bottom: 4px; }
+        .calc-result-lbl { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); font-weight: 600; }
+        .calc-suggestion { font-size: 0.8rem; color: var(--text-muted); text-align: center; margin-bottom: 18px; min-height: 38px; }
+        .calc-cta { width: 100%; padding: 14px; font-size: 0.95rem; }
+        .section-header { max-width: 700px; margin: 0 auto 64px auto; }
+        .section-header h2 { font-size: 2.6rem; margin-bottom: 16px; line-height: 1.2; }
+        .section-header p { font-size: 1.1rem; }
+        .roles-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 48px; }
+        .role-card { text-align: center; padding: 36px 24px; }
+        .role-icon { width: 54px; height: 54px; background: rgba(201, 161, 76, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; color: var(--primary); transition: var(--transition-smooth); }
+        .role-card:hover .role-icon { background: var(--primary); color: var(--white); transform: scale(1.1); }
+        .role-card h3 { font-size: 1.2rem; margin-bottom: 12px; }
+        .role-card p { font-size: 0.85rem; }
+        .target-box { display: flex; align-items: center; justify-content: space-between; max-width: 900px; margin: 0 auto; background: linear-gradient(135deg, rgba(20, 30, 66, 0.5) 0%, rgba(10, 16, 40, 0.5) 100%); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 28px 40px; gap: 24px; }
+        .target-left { display: flex; align-items: center; gap: 20px; }
+        .target-graphic { width: 48px; height: 48px; border-radius: 50%; background: rgba(212, 175, 95, 0.1); display: flex; align-items: center; justify-content: center; color: var(--secondary); flex-shrink: 0; }
+        .target-text h4 { font-size: 1.15rem; margin-bottom: 4px; }
+        .target-text p { font-size: 0.85rem; }
+        .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 64px; }
+        .comparison-panel { border-radius: 16px; padding: 40px; }
+        .panel-before { background: rgba(239, 68, 68, 0.02); border: 1px solid rgba(239, 68, 68, 0.12); }
+        .panel-after { background: rgba(16, 185, 129, 0.02); border: 1px solid rgba(16, 185, 129, 0.12); }
+        .panel-title { display: flex; align-items: center; gap: 12px; font-size: 1.35rem; margin-bottom: 24px; }
+        .panel-before .panel-title { color: var(--error); }
+        .panel-after .panel-title { color: var(--success); }
+        .comparison-list { list-style: none; }
+        .comparison-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; font-size: 0.95rem; }
+        .comparison-item svg { width: 18px; height: 18px; margin-top: 3px; flex-shrink: 0; }
+        .panel-before svg { color: var(--error); }
+        .panel-after svg { color: var(--success); }
+        .roadmap-tabs-container { max-width: 900px; margin: 0 auto; }
+        .roadmap-steps-header { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 32px; }
+        .roadmap-step-tab { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 12px; cursor: pointer; transition: var(--transition-smooth); text-align: left; position: relative; overflow: hidden; }
+        .roadmap-step-tab::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 3px; background: var(--primary); transition: var(--transition-smooth); }
+        .roadmap-step-tab.active { background: rgba(201, 161, 76, 0.06); border-color: rgba(201, 161, 76, 0.25); }
+        .roadmap-step-tab.active::after { width: 100%; }
+        .roadmap-step-num { font-family: var(--font-display); font-size: 0.8rem; color: var(--primary); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center; }
+        .roadmap-step-title { font-size: 1.1rem; font-weight: 600; color: var(--white); }
+        .roadmap-content-display { background: linear-gradient(145deg, rgba(20, 30, 66, 0.6) 0%, rgba(10, 16, 40, 0.6) 100%); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 16px; padding: 40px; min-height: 280px; display: none; }
+        .roadmap-content-display.active { display: block; animation: fadeIn 0.4s ease-in-out forwards; }
+        .roadmap-detail-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; align-items: center; }
+        .roadmap-detail-left h3 { font-size: 1.8rem; margin-bottom: 12px; }
+        .roadmap-detail-left p { margin-bottom: 24px; font-size: 0.95rem; }
+        .roadmap-detail-right { background: rgba(255, 255, 255, 0.01); border-left: 3px solid var(--secondary); padding: 8px 0 8px 24px; }
+        .roadmap-sublist { list-style: none; }
+        .roadmap-subitem { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; font-size: 0.95rem; }
+        .roadmap-subitem:last-child { margin-bottom: 0; }
+        .roadmap-subitem svg { width: 18px; height: 18px; color: var(--secondary); margin-top: 3px; flex-shrink: 0; }
+        .roadmap-subitem-title { font-weight: 600; color: var(--white); margin-bottom: 2px; }
+        .bio-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 48px; align-items: center; }
+        .bio-image-wrapper { position: relative; width: 100%; aspect-ratio: 1/1; border-radius: 20px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 12px 36px rgba(0,0,0,0.5); background: linear-gradient(135deg, rgba(20, 30, 66, 0.9) 0%, rgba(10, 16, 40, 0.9) 100%); display: flex; align-items: center; justify-content: center; }
+        .bio-placeholder { text-align: center; padding: 24px; }
+        .bio-placeholder svg { width: 72px; height: 72px; color: var(--primary); margin-bottom: 16px; opacity: 0.8; }
+        .bio-placeholder h4 { font-size: 1.2rem; margin-bottom: 4px; }
+        .bio-details h3 { font-size: 2.2rem; margin-bottom: 8px; }
+        .bio-role { color: var(--secondary); font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; margin-bottom: 24px; }
+        .bio-quote { font-style: italic; font-size: 1.1rem; border-left: 3px solid var(--primary); padding-left: 20px; margin-bottom: 24px; color: var(--text-main); }
+        .bio-text { font-size: 0.95rem; margin-bottom: 28px; }
+        .bio-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .bio-stat-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 16px; }
+        .bio-stat-val { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--white); }
+        .bio-stat-lbl { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+        .booking-section { background: linear-gradient(180deg, transparent 0%, rgba(201, 161, 76, 0.03) 100%); position: relative; }
+        .booking-card { max-width: 700px; margin: 0 auto; border-radius: 24px; padding: 48px; background: linear-gradient(145deg, rgba(20, 30, 66, 0.85) 0%, rgba(10, 16, 40, 0.95) 100%); }
+        .booking-header { text-align: center; margin-bottom: 36px; }
+        .booking-header h2 { font-size: 2.2rem; margin-bottom: 12px; }
+        .form-steps-timeline { display: flex; justify-content: space-between; align-items: center; max-width: 400px; margin: 0 auto 36px auto; position: relative; }
+        .form-steps-timeline::after { content: ''; position: absolute; height: 2px; background: rgba(255, 255, 255, 0.1); top: 50%; left: 0; right: 0; z-index: 1; transform: translateY(-50%); }
+        .form-timeline-progress { position: absolute; height: 2px; background: var(--primary); top: 50%; left: 0; width: 0%; z-index: 2; transform: translateY(-50%); transition: var(--transition-smooth); }
+        .step-dot { width: 32px; height: 32px; border-radius: 50%; background: var(--bg-dark); border: 2px solid rgba(255, 255, 255, 0.2); color: var(--text-muted); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 600; font-size: 0.85rem; position: relative; z-index: 3; transition: var(--transition-smooth); }
+        .step-dot.active { border-color: var(--primary); color: var(--white); box-shadow: 0 0 10px rgba(201, 161, 76, 0.5); background: var(--primary); }
+        .step-dot.completed { border-color: var(--secondary); color: var(--bg-dark); background: var(--secondary); }
+        .form-step { display: none; }
+        .form-step.active { display: block; animation: slideIn 0.3s ease-in-out forwards; }
+        .form-group { margin-bottom: 24px; }
+        .form-label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: var(--text-main); }
+        .form-input { width: 100%; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 14px 18px; font-family: var(--font-body); font-size: 0.95rem; color: var(--white); outline: none; transition: var(--transition-smooth); }
+        .form-input:focus { border-color: var(--primary); background: rgba(255, 255, 255, 0.06); box-shadow: 0 0 8px rgba(201, 161, 76, 0.25); }
+        .chips-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .chip-option { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 14px; color: var(--text-muted); cursor: pointer; transition: var(--transition-smooth); display: flex; align-items: center; gap: 12px; font-size: 0.85rem; }
+        .chip-option:hover { background: rgba(255, 255, 255, 0.06); border-color: rgba(255, 255, 255, 0.2); color: var(--white); }
+        .chip-option.selected { background: rgba(212, 175, 95, 0.08); border-color: var(--secondary); color: var(--white); box-shadow: 0 0 10px rgba(212, 175, 95, 0.1); }
+        .chip-checkbox { width: 18px; height: 18px; border-radius: 4px; border: 2px solid rgba(255, 255, 255, 0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: var(--transition-smooth); }
+        .chip-option.selected .chip-checkbox { border-color: var(--secondary); background: var(--secondary); }
+        .chip-checkbox svg { width: 12px; height: 12px; color: var(--bg-dark); display: none; }
+        .chip-option.selected .chip-checkbox svg { display: block; }
+        .schedule-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+        .schedule-day { border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 16px; background: rgba(255,255,255,0.01); text-align: center; }
+        .schedule-day-title { font-weight: 600; font-size: 0.9rem; margin-bottom: 12px; color: var(--white); }
+        .schedule-slots { display: flex; flex-direction: column; gap: 8px; }
+        .schedule-slot-btn { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 10px; border-radius: 6px; color: var(--text-muted); cursor: pointer; font-size: 0.8rem; transition: var(--transition-smooth); width: 100%; }
+        .schedule-slot-btn:hover { background: rgba(255,255,255,0.08); color: var(--white); }
+        .schedule-slot-btn.selected { background: var(--primary); border-color: var(--primary); color: var(--white); box-shadow: 0 0 10px rgba(201, 161, 76, 0.3); }
+        .form-nav-btns { display: flex; justify-content: space-between; margin-top: 32px; gap: 16px; }
+        .success-box { text-align: center; padding: 24px 0; }
+        .success-icon { width: 64px; height: 64px; background: rgba(16, 185, 129, 0.1); border: 2px solid var(--success); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--success); margin: 0 auto 24px auto; position: relative; }
+        .success-icon::after { content: ''; position: absolute; width: 100%; height: 100%; border-radius: 50%; border: 2px solid var(--success); animation: ping 1.5s infinite; }
+        @keyframes ping { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(1.4); opacity: 0; } }
+        .success-box h3 { font-size: 1.8rem; margin-bottom: 12px; }
+        .success-box p { font-size: 0.95rem; margin-bottom: 24px; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .booking-details-summary { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; padding: 20px; max-width: 440px; margin: 0 auto 28px auto; text-align: left; }
+        .summary-row { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.85rem; }
+        .summary-row:last-child { margin-bottom: 0; padding-top: 8px; border-top: 1px dashed rgba(255,255,255,0.1); }
+        .summary-label { color: var(--text-muted); }
+        .summary-val { color: var(--white); font-weight: 500; }
+        .faq-wrapper { max-width: 800px; margin: 0 auto; }
+        .faq-item { background: rgba(255, 255, 255, 0.01); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; margin-bottom: 16px; overflow: hidden; transition: var(--transition-smooth); }
+        .faq-header { padding: 24px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; user-select: none; }
+        .faq-header h3 { font-size: 1.1rem; font-weight: 600; color: var(--white); }
+        .faq-toggle-icon { width: 20px; height: 20px; color: var(--text-muted); transition: var(--transition-smooth); flex-shrink: 0; }
+        .faq-body { max-height: 0; overflow: hidden; transition: max-height 0.3s cubic-bezier(0, 1, 0, 1); padding: 0 24px; }
+        .faq-body p { padding-bottom: 24px; font-size: 0.95rem; }
+        .faq-item.active { background: rgba(255, 255, 255, 0.02); border-color: rgba(201, 161, 76, 0.25); }
+        .faq-item.active .faq-toggle-icon { transform: rotate(180deg); color: var(--primary); }
+        .faq-item.active .faq-body { max-height: 1000px; transition: max-height 0.4s cubic-bezier(1, 0, 1, 0); }
+        .toast { position: fixed; bottom: 30px; left: 30px; background: linear-gradient(135deg, rgba(20, 30, 66, 0.95) 0%, rgba(10, 16, 40, 0.98) 100%); border: 1px solid var(--primary); border-radius: 12px; padding: 16px 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); display: flex; align-items: center; gap: 16px; z-index: 2000; transform: translateY(150px); opacity: 0; transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); max-width: 380px; }
+        .toast.show { transform: translateY(0); opacity: 1; }
+        .toast-icon { width: 36px; height: 36px; border-radius: 50%; background: rgba(201, 161, 76, 0.1); display: flex; align-items: center; justify-content: center; color: var(--primary); flex-shrink: 0; }
+        .toast-details h5 { font-size: 0.85rem; color: var(--white); }
+        .toast-details p { font-size: 0.75rem; color: var(--text-muted); }
+        footer { background: #060a1c; border-top: 1px solid rgba(255, 255, 255, 0.05); padding: 60px 0; }
+        .footer-grid { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+        .footer-logo { font-family: var(--font-display); font-weight: 800; font-size: 1.15rem; color: var(--white); text-decoration: none; letter-spacing: 0.05em; }
+        .footer-logo span { color: var(--primary); }
+        .footer-links { display: flex; gap: 24px; list-style: none; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 0.85rem; transition: var(--transition-smooth); }
+        .footer-links a:hover { color: var(--white); }
+        .footer-copyright { font-size: 0.8rem; color: var(--text-dark); margin-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.02); padding-top: 24px; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes slideIn { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        @media (max-width: 1024px) {
+            .hero-grid { grid-template-columns: 1fr; gap: 56px; }
+            .hero-right-container { max-width: 600px; margin: 0 auto; width: 100%; }
+            .roles-grid { grid-template-columns: 1fr 1fr; }
+            .bio-grid { grid-template-columns: 1fr; gap: 36px; }
+            .bio-image-wrapper { max-width: 400px; margin: 0 auto; }
+        }
+        @media (max-width: 768px) {
+            header { padding: 14px 0; }
+            .nav-cta .btn { display: none; }
+            .hero { padding: 120px 0 60px 0; }
+            .hero h1 { font-size: 2.4rem; }
+            .hero p.lead { font-size: 1rem; }
+            .section-padding { padding: 60px 0; }
+            .section-header h2 { font-size: 2rem; }
+            .comparison-grid { grid-template-columns: 1fr; gap: 24px; }
+            .roadmap-steps-header { grid-template-columns: 1fr; gap: 12px; }
+            .roadmap-content-display { padding: 24px; }
+            .roadmap-detail-grid { grid-template-columns: 1fr; gap: 24px; }
+            .roadmap-detail-right { border-left: none; border-top: 3px solid var(--secondary); padding: 24px 0 0 0; }
+            .target-box { flex-direction: column; padding: 24px; text-align: center; }
+            .target-left { flex-direction: column; gap: 12px; }
+            .booking-card { padding: 28px 20px; }
+            .chips-grid { grid-template-columns: 1fr; }
+            .schedule-grid { grid-template-columns: 1fr; }
+            .footer-grid { flex-direction: column; text-align: center; }
+            .footer-links { justify-content: center; flex-wrap: wrap; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">LEADERSHIP<span>AUDIT</span><span class="logo-dot"></span></a>
+            <div class="nav-cta">
+                <span class="nav-tag">10–250 Employees Only</span>
+                <a href="#book-audit" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.85rem;">Check Eligibility</a>
+            </div>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-left">
+                <span class="hero-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>60-Minute Executive Session</span>
+                <h1>Stop Letting Hidden <span class="gradient-text">Leadership Friction</span> Stall Your Growth</h1>
+                <p class="lead">In 60 minutes, diagnose the key organizational bottlenecks delaying your decisions, muddying accountability, and burning out your best executive talent.</p>
+                <div class="hero-ctas">
+                    <a href="#book-audit" class="btn btn-primary">Claim Your Free Audit<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                    <a href="#calc-section" class="btn btn-secondary">Friction Calculator</a>
+                </div>
+                <div class="hero-bullets">
+                    <div class="hero-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Tailored for 10–250 team structures</span></div>
+                    <div class="hero-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Immediate action roadmap</span></div>
+                    <div class="hero-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Led by executive auditor Bill</span></div>
+                    <div class="hero-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span>No fluff. Execution-focused.</span></div>
+                </div>
+            </div>
+            <div class="hero-right-container" id="calc-section">
+                <div class="glow-sphere"></div>
+                <div class="hero-calculator">
+                    <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--secondary);"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><line x1="9" y1="9" x2="15" y2="9"></line><line x1="9" y1="13" x2="15" y2="13"></line><line x1="9" y1="17" x2="15" y2="17"></line><line x1="12" y1="9" x2="12" y2="17"></line></svg>Leadership Friction Calculator</h3>
+                    <p class="subtitle">See how much alignment friction is costing your company weekly</p>
+                    <div class="calc-row">
+                        <div class="calc-label"><span>Company/Team Size</span><span id="team-size-val" class="value">50 Employees</span></div>
+                        <input type="range" min="10" max="250" value="50" class="range-slider" id="team-size-slider">
+                    </div>
+                    <div class="calc-row">
+                        <div class="calc-label"><span>Average Executive/Manager Salary</span><span id="salary-val" class="value">$110,000 / year</span></div>
+                        <input type="range" min="50000" max="250000" step="5000" value="110000" class="range-slider" id="salary-slider">
+                    </div>
+                    <div class="calc-row">
+                        <label class="calc-label">Friction Level</label>
+                        <div class="friction-selector">
+                            <button class="friction-btn" data-level="low">Low<span style="display:block;font-size:0.6rem;opacity:0.7;">Minor delays</span></button>
+                            <button class="friction-btn active" data-level="medium">Medium<span style="display:block;font-size:0.6rem;opacity:0.7;">Regular drag</span></button>
+                            <button class="friction-btn" data-level="high">High<span style="display:block;font-size:0.6rem;opacity:0.7;">Stalled decisions</span></button>
+                        </div>
+                    </div>
+                    <div class="calc-result-box">
+                        <div class="calc-result-val" id="loss-output">$14,300</div>
+                        <div class="calc-result-lbl">Estimated Monthly Friction Leak</div>
+                    </div>
+                    <div class="calc-suggestion" id="calc-suggestion-text">Medium friction leaks approx. 4.5 hours per employee/week in alignment cycles.</div>
+                    <a href="#book-audit" class="btn btn-teal calc-cta">Schedule Audit to Stop This Leak<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-padding reveal">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Designed for Leadership in 10-250 Employee Companies</h2>
+                <p>The transition from a tight-knit startup to an established scale-up is where most leadership engines break down. We help leadership units build bulletproof operational clarity.</p>
+            </div>
+            <div class="roles-grid">
+                <div class="glass-card role-card">
+                    <div class="role-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+                    <h3>CEOs</h3>
+                    <p>Stop being the ultimate decision bottleneck and clear your plate to focus back on growth strategy and market expansion.</p>
+                </div>
+                <div class="glass-card role-card">
+                    <div class="role-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg></div>
+                    <h3>Founders</h3>
+                    <p>Transition from manager of day-to-day details to builder of scalable management systems that execute without your constant presence.</p>
+                </div>
+                <div class="glass-card role-card">
+                    <div class="role-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path><polygon points="12 11 12 17 17 14"></polygon></svg></div>
+                    <h3>Business Owners</h3>
+                    <p>Get a reality check on your core alignment gaps so you can install systems that deliver predictable profits month after month.</p>
+                </div>
+                <div class="glass-card role-card">
+                    <div class="role-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+                    <h3>Executive Teams</h3>
+                    <p>Unify leadership priorities. Bridge communication gaps across departments to resolve friction and run at peak execution speeds.</p>
+                </div>
+            </div>
+            <div class="target-box">
+                <div class="target-left">
+                    <div class="target-graphic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg></div>
+                    <div class="target-text">
+                        <h4>Our Strict Criteria: Companies with 10–250 Employees</h4>
+                        <p>We focus exclusively on organizations in this size bracket. Smaller teams are too early for scale audits; larger enterprises require corporate-level governance cycles.</p>
+                    </div>
+                </div>
+                <a href="#book-audit" class="btn btn-secondary" style="flex-shrink:0;">Confirm Qualification</a>
+            </div>
+            <div class="comparison-grid">
+                <div class="comparison-panel panel-before">
+                    <h3 class="panel-title"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>Current Alignment Friction</h3>
+                    <ul class="comparison-list">
+                        <li class="comparison-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg><span><strong>Decision Paralysis:</strong> Initiatives get stuck in meetings for weeks, requiring founder signoff for simple operations.</span></li>
+                        <li class="comparison-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg><span><strong>Accountability Leak:</strong> Issues get dropped between departments, leading to finger-pointing when key milestones are missed.</span></li>
+                        <li class="comparison-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg><span><strong>Vague Metrics:</strong> The leadership team tracks high-level metrics, but managers don't know their core weekly deliverables.</span></li>
+                        <li class="comparison-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg><span><strong>Communication Silos:</strong> Different departments execute based on conflicting priorities, causing duplicate work.</span></li>
+                    </ul>
+                </div>
+                <div class="comparison-panel panel-after">
+                    <h3 class="panel-title"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>Post-Audit Alignment</h3>
+                    <ul class="comparison-list">
+                        <li class="comparison-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span><strong>Decentralized Execution:</strong> Clear thresholds established for decision-making. Teams resolve day-to-day issues independently.</span></li>
+                        <li class="comparison-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span><strong>Absolute Ownership:</strong> Direct, public ownership metrics mapped for every manager, leaving zero room for execution drift.</span></li>
+                        <li class="comparison-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span><strong>High-Velocity Communication:</strong> Synchronized reporting structures that align executives on priorities in minutes.</span></li>
+                        <li class="comparison-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span><strong>Predictable Growth Engine:</strong> A leadership infrastructure that scales smoothly, without relying on the CEO's bandwidth.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-padding reveal" style="background: rgba(255, 255, 255, 0.01);">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>What You Get in the Audit</h2>
+                <p>A structured, high-intensity review of your leadership dynamics. In 60 minutes, we look under the hood of your operations and hand you a blueprint to eliminate alignment leaks.</p>
+            </div>
+            <div class="roadmap-tabs-container">
+                <div class="roadmap-steps-header">
+                    <div class="roadmap-step-tab active" onclick="switchStep(1)">
+                        <div class="roadmap-step-num"><span>Step 01</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+                        <div class="roadmap-step-title">Leadership Assessment</div>
+                    </div>
+                    <div class="roadmap-step-tab" onclick="switchStep(2)">
+                        <div class="roadmap-step-num"><span>Step 02</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg></div>
+                        <div class="roadmap-step-title">Clarity Scorecard</div>
+                    </div>
+                    <div class="roadmap-step-tab" onclick="switchStep(3)">
+                        <div class="roadmap-step-num"><span>Step 03</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg></div>
+                        <div class="roadmap-step-title">Action Roadmap</div>
+                    </div>
+                </div>
+                <div class="roadmap-content-display active" id="roadmap-pane-1">
+                    <div class="roadmap-detail-grid">
+                        <div class="roadmap-detail-left">
+                            <span class="hero-badge" style="background: rgba(201,161,76,0.1); border-color: rgba(201,161,76,0.3); color: var(--primary);">Assessment</span>
+                            <h3>Deep-Dive Operational Review</h3>
+                            <p>We sit down with you to perform a raw audit of your current operational structure, documenting the friction leaks that drag your executive bandwidth.</p>
+                            <a href="#book-audit" class="btn btn-primary" style="font-size: 0.85rem; padding: 10px 20px;">Book Session</a>
+                        </div>
+                        <div class="roadmap-detail-right">
+                            <ul class="roadmap-sublist">
+                                <li class="roadmap-subitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><div><div class="roadmap-subitem-title">Current Challenges Audit</div><p style="font-size: 0.8rem;">Cataloging historical blockages, stalled initiatives, and projects that ran over schedule.</p></div></li>
+                                <li class="roadmap-subitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><div><div class="roadmap-subitem-title">Team Structure Analysis</div><p style="font-size: 0.8rem;">Reviewing span-of-control ratios, reporting layers, and general executive overhead.</p></div></li>
+                                <li class="roadmap-subitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><div><div class="roadmap-subitem-title">Decision-Making Architecture</div><p style="font-size: 0.8rem;">Analyzing signoff channels to see where authority is unnecessarily centralized.</p></div></li>
+                                <li class="roadmap-subitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><div><div class="roadmap-subitem-title">Accountability Systems</div><p style="font-size: 0.8rem;">Auditing progress-tracking tools, goal framework alignment, and KPI transparency.</p></div></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="roadmap-content-display" id="roadmap-pane-2">
+                    <div class="roadmap-detail-grid">
+                        <div class="roadmap-detail-left">
+                            <span class="hero-badge" style="background: rgba(201,161,76,0.1); border-color: rgba(201,161,76,0.3); color: var(--primary);">Diagnostics</span>
+                            <h3>The Leadership Clarity Scorecard</h3>
+                            <p>Get a rigorous, metricized diagnostic report rating your organizational health across critical indicators, identifying where alignment breaks down.</p>
+                            <a href="#book-audit" class="btn btn-primary" style="font-size: 0.85rem; padding: 10px 20px;">Book Session</a>
+                        </div>
+                        <div class="roadmap-detail-right">
+                            <ul class="roadmap-sublist">
+                                <li class="roadmap-subitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><div><div class="roadmap-subitem-title">Top 3 Leadership Bottlenecks</div><p style="font-size: 0.8rem;">Pinpointing the precise roles, processes, or structures clogging your execution engine.</p></div></li>
+                                <li class="roadmap-subitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><div><div class="roadmap-subitem-title">Misalignment Mapping</div><p style="font-size: 0.8rem;">Isolating conflicting department priorities and mismatch in executive team goals.</p></div></li>
+                                <li class="roadmap-subitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><div><div class="roadmap-subitem-title">Productivity Leaks</div><p style="font-size: 0.8rem;">Tracing wasted employee hours and delayed loops caused by status-checking meetings.</p></div></li>
+                                <li class="roadmap-subitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><div><div class="roadmap-subitem-title">Communication Breakdown Risk</div><p style="font-size: 0.8rem;">Gauging transparency health, information silos, and overall feedback latency issues.</p></div></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="roadmap-content-display" id="roadmap-pane-3">
+                    <div class="roadmap-detail-grid">
+                        <div class="roadmap-detail-left">
+                            <span class="hero-badge" style="background: rgba(201,161,76,0.1); border-color: rgba(201,161,76,0.3); color: var(--primary);">Execution Plan</span>
+                            <h3>Custom Action Blueprint</h3>
+                            <p>You leave the audit with an actionable, step-by-step roadmap to install clear ownership metrics and speed up decision loops.</p>
+                            <a href="#book-audit" class="btn btn-primary" style="font-size: 0.85rem; padding: 10px 20px;">Book Session</a>
+                        </div>
+                        <div class="roadmap-detail-right">
+                            <ul class="roadmap-sublist">
+                                <li class="roadmap-subitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><div><div class="roadmap-subitem-title">Immediate Quick-Wins</div><p style="font-size: 0.8rem;">Low-friction changes you can apply within 48 hours to regain operational momentum.</p></div></li>
+                                <li class="roadmap-subitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><div><div class="roadmap-subitem-title">Priority Recommendations</div><p style="font-size: 0.8rem;">Structural adjustments regarding meeting cadence, ownership mapping, and KPI focus.</p></div></li>
+                                <li class="roadmap-subitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><div><div class="roadmap-subitem-title">Leadership Improvement Roadmap</div><p style="font-size: 0.8rem;">A 90-day blueprint details how to scale operations securely as headcount grows.</p></div></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-padding reveal">
+        <div class="container">
+            <div class="bio-grid">
+                <div class="bio-image-wrapper">
+                    <div class="bio-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                        <h4>Bill</h4>
+                        <p style="font-size: 0.75rem; color: var(--text-muted);">Executive Performance Auditor</p>
+                    </div>
+                </div>
+                <div class="bio-details">
+                    <h3>Led by Executive Auditor Bill</h3>
+                    <div class="bio-role">Specialist in Scaling Mid-Market Alignment</div>
+                    <div class="bio-quote">"Most scaling companies do not have talent issues. They have structure and speed issues. When decision chains are unclear, execution stalls by default."</div>
+                    <p class="bio-text">Bill is a hands-on operations consultant who has worked directly inside companies with 10–250 employees. He cuts through internal consensus loops, addresses alignment gaps, and creates clear organizational structures. His approach is practical, direct, and focused on execution.</p>
+                    <div class="bio-stats">
+                        <div class="bio-stat-card"><div class="bio-stat-val">150+</div><div class="bio-stat-lbl">Audits Completed</div></div>
+                        <div class="bio-stat-card"><div class="bio-stat-val">94%</div><div class="bio-stat-lbl">Actionable Rating</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-padding booking-section reveal" id="book-audit">
+        <div class="container">
+            <div class="booking-card">
+                <div class="booking-header">
+                    <h2>Schedule Your Leadership Audit</h2>
+                    <p style="font-size: 0.95rem;">Review your application criteria. Takes less than 60 seconds to set up.</p>
+                </div>
+                <div class="form-steps-timeline">
+                    <div class="form-timeline-progress" id="form-progress-bar"></div>
+                    <div class="step-dot active" id="dot-1">1</div>
+                    <div class="step-dot" id="dot-2">2</div>
+                    <div class="step-dot" id="dot-3">3</div>
+                </div>
+                <form id="audit-form" onsubmit="handleFormSubmit(event)">
+                    <div class="form-step active" id="step-1-pane">
+                        <div class="form-group">
+                            <label class="form-label">What is your company name?</label>
+                            <input type="text" class="form-input" id="comp-name" placeholder="e.g. Acme Scaling Corp" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" style="display:flex; justify-content:space-between;"><span>Estimated employee headcount?</span><span id="form-headcount-val" style="color: var(--secondary); font-weight:600;">50</span></label>
+                            <input type="range" min="1" max="300" value="50" class="range-slider" id="form-headcount-slider" oninput="updateFormHeadcount(this.value)">
+                            <p style="font-size:0.75rem; color:var(--text-muted); margin-top:4px;" id="headcount-qualification-warning">Matches target bracket (10–250 employees).</p>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Your role in the organization?</label>
+                            <select class="form-input" id="user-role" style="background-color: var(--bg-dark);" required>
+                                <option value="" disabled selected>Select your title...</option>
+                                <option value="CEO">CEO</option>
+                                <option value="Founder">Founder</option>
+                                <option value="Owner">Business Owner</option>
+                                <option value="Executive">VP / C-Level Executive</option>
+                                <option value="Other">Other Role</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-step" id="step-2-pane">
+                        <div class="form-group">
+                            <label class="form-label" style="margin-bottom: 4px;">What are the top leadership friction leaks in your team?</label>
+                            <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:16px;">Select all that apply.</p>
+                            <div class="chips-grid">
+                                <div class="chip-option" onclick="toggleChip(this)" data-value="decision-making"><div class="chip-checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Stalled Decision Making</span></div>
+                                <div class="chip-option" onclick="toggleChip(this)" data-value="ownership"><div class="chip-checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Unclear Ownership</span></div>
+                                <div class="chip-option" onclick="toggleChip(this)" data-value="targets"><div class="chip-checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Missed Execution Targets</span></div>
+                                <div class="chip-option" onclick="toggleChip(this)" data-value="communication"><div class="chip-checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Communication Silos</span></div>
+                                <div class="chip-option" onclick="toggleChip(this)" data-value="ceo-bottleneck"><div class="chip-checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>CEO/Founder is the bottleneck</span></div>
+                                <div class="chip-option" onclick="toggleChip(this)" data-value="meetings"><div class="chip-checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Too many alignment meetings</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-step" id="step-3-pane">
+                        <div class="schedule-grid">
+                            <div class="schedule-day">
+                                <div class="schedule-day-title">Tuesday slots</div>
+                                <div class="schedule-slots">
+                                    <button type="button" class="schedule-slot-btn" onclick="selectSlot(this)" data-time="Tuesday: 10:00 AM EST">10:00 AM EST</button>
+                                    <button type="button" class="schedule-slot-btn" onclick="selectSlot(this)" data-time="Tuesday: 2:00 PM EST">2:00 PM EST</button>
+                                </div>
+                            </div>
+                            <div class="schedule-day">
+                                <div class="schedule-day-title">Wednesday slots</div>
+                                <div class="schedule-slots">
+                                    <button type="button" class="schedule-slot-btn" onclick="selectSlot(this)" data-time="Wednesday: 11:30 AM EST">11:30 AM EST</button>
+                                    <button type="button" class="schedule-slot-btn" onclick="selectSlot(this)" data-time="Wednesday: 4:00 PM EST">4:00 PM EST</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-input" id="user-name" placeholder="e.g. Sarah Connor" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Direct Work Email</label>
+                            <input type="email" class="form-input" id="user-email" placeholder="e.g. sarah@acme.com" required>
+                        </div>
+                    </div>
+                    <div class="form-nav-btns">
+                        <button type="button" class="btn btn-secondary" id="form-prev-btn" onclick="navigateStep(-1)" style="display: none;">Back</button>
+                        <button type="button" class="btn btn-primary" id="form-next-btn" onclick="navigateStep(1)" style="margin-left: auto;">Continue</button>
+                        <button type="submit" class="btn btn-teal" id="form-submit-btn" style="margin-left: auto; display: none;">Book Audit Session</button>
+                    </div>
+                </form>
+                <div class="success-box" id="form-success-pane" style="display: none;">
+                    <div class="success-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <h3>Audit Request Received</h3>
+                    <p>We are reviewing your organization details. If qualified, a calendar invite and diagnostic prep checklist will be dispatched within 4 hours.</p>
+                    <div class="booking-details-summary">
+                        <div class="summary-row"><span class="summary-label">Company:</span><span class="summary-val" id="sum-company">-</span></div>
+                        <div class="summary-row"><span class="summary-label">Headcount:</span><span class="summary-val" id="sum-headcount">-</span></div>
+                        <div class="summary-row"><span class="summary-label">Preferred Time:</span><span class="summary-val" id="sum-time">Anytime / Calendar Link</span></div>
+                    </div>
+                    <a href="#" class="btn btn-secondary" onclick="resetBookingForm(); return false;">Submit Another Request</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-padding reveal" style="background: rgba(0,0,0,0.15);">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Frequently Asked Questions</h2>
+                <p>Have questions about how the 60-minute executive session works? Here are the answers.</p>
+            </div>
+            <div class="faq-wrapper">
+                <div class="faq-item">
+                    <div class="faq-header" onclick="toggleFaq(this)"><h3>Is this audit really free? What is the catch?</h3><svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                    <div class="faq-body"><p>Yes, it is entirely free. The audit is designed to deliver immediate diagnostic value. By showcasing how we find and fix leadership bottlenecks in real-time, some companies later choose to hire Bill to consult on their operations. There is zero obligation or sales pitch required to get your action roadmap.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-header" onclick="toggleFaq(this)"><h3>Why do you restrict applications to companies with 10–250 employees?</h3><svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                    <div class="faq-body"><p>Companies within this size range face specific scaling friction points: moving from founder-driven execution to management systems. Teams with fewer than 10 employees do not have complex alignment challenges, and companies with more than 250 employees require enterprise governance reviews that cannot be resolved in a single 60-minute session.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-header" onclick="toggleFaq(this)"><h3>What preparation is required before our session?</h3><svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                    <div class="faq-body"><p>Minimal preparation. Once approved, you will receive a quick 4-question onboarding form to outline your current reporting structure and key team deliverables. You will also want to make sure your core leadership team members (if joining) are available for the full 60 minutes.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-header" onclick="toggleFaq(this)"><h3>How long does it take to get our scorecard and action roadmap?</h3><svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                    <div class="faq-body"><p>You leave the actual 60-minute call with your primary action roadmap completed. Bill will compile your formalized Leadership Clarity Scorecard PDF and deliver it to your inbox within 24 hours of the audit session.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <a href="#" class="footer-logo">LEADERSHIP<span>AUDIT</span></a>
+                <ul class="footer-links">
+                    <li><a href="#calc-section">Friction Calculator</a></li>
+                    <li><a href="#book-audit">Apply Now</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-copyright text-center">&copy; 2026 becomeabetterleader.online. All rights reserved. Designed for elite executive leadership.</div>
+        </div>
+    </footer>
+    <div class="toast" id="booking-toast">
+        <div class="toast-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
+        <div class="toast-details"><h5 id="toast-title">CEO from Austin, TX</h5><p id="toast-desc">Booked a Leadership Audit 12m ago</p></div>
+    </div>
+    <script>
+        const teamSizeSlider = document.getElementById('team-size-slider');
+        const teamSizeVal = document.getElementById('team-size-val');
+        const salarySlider = document.getElementById('salary-slider');
+        const salaryVal = document.getElementById('salary-val');
+        const lossOutput = document.getElementById('loss-output');
+        const calcSuggestionText = document.getElementById('calc-suggestion-text');
+        let frictionLevel = 'medium';
+        teamSizeSlider.addEventListener('input', (e) => { teamSizeVal.textContent = `${e.target.value} Employees`; calculateFrictionCost(); });
+        salarySlider.addEventListener('input', (e) => { const formatted = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(e.target.value); salaryVal.textContent = `${formatted} / year`; calculateFrictionCost(); });
+        const frictionBtns = document.querySelectorAll('.friction-btn');
+        frictionBtns.forEach(btn => { btn.addEventListener('click', () => { frictionBtns.forEach(b => b.classList.remove('active')); btn.classList.add('active'); frictionLevel = btn.getAttribute('data-level'); calculateFrictionCost(); }); });
+        function calculateFrictionCost() {
+            const teamSize = parseInt(teamSizeSlider.value);
+            const avgSalary = parseInt(salarySlider.value);
+            const hourlyRate = avgSalary / 2000;
+            let frictionHoursPerEmployeeWeekly = 2;
+            let suggestion = "Low friction leaks approx. 2 hours per employee/week in alignment delays.";
+            if (frictionLevel === 'medium') { frictionHoursPerEmployeeWeekly = 4.5; suggestion = "Medium friction leaks approx. 4.5 hours per employee/week in tracking updates and status meetings."; }
+            else if (frictionLevel === 'high') { frictionHoursPerEmployeeWeekly = 8; suggestion = "High friction leaks approx. 8 hours per employee/week due to blocked decisions and team silo friction."; }
+            calcSuggestionText.textContent = suggestion;
+            const totalWeeklyWaste = teamSize * frictionHoursPerEmployeeWeekly * hourlyRate;
+            const monthlyLoss = totalWeeklyWaste * 4.33;
+            animateValue(lossOutput, parseInt(lossOutput.textContent.replace(/[^0-9.-]+/g,"")) || 0, Math.round(monthlyLoss));
+        }
+        function animateValue(element, start, end) {
+            if (start === end) return;
+            const duration = 400; let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const current = Math.floor(progress * (end - start) + start);
+                element.textContent = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(current);
+                if (progress < 1) { window.requestAnimationFrame(step); }
+            };
+            window.requestAnimationFrame(step);
+        }
+        calculateFrictionCost();
+        function switchStep(stepNum) {
+            const tabs = document.querySelectorAll('.roadmap-step-tab');
+            tabs.forEach((tab, index) => { if (index === stepNum - 1) { tab.classList.add('active'); } else { tab.classList.remove('active'); } });
+            for (let i = 1; i <= 3; i++) { const pane = document.getElementById(`roadmap-pane-${i}`); if (i === stepNum) { pane.classList.add('active'); } else { pane.classList.remove('active'); } }
+        }
+        let currentFormStep = 1;
+        const totalFormSteps = 3;
+        const selectedChallenges = new Set();
+        let selectedTimeSlot = '';
+        function updateFormHeadcount(val) {
+            document.getElementById('form-headcount-val').textContent = val;
+            const warningEl = document.getElementById('headcount-qualification-warning');
+            if (val < 10) { warningEl.textContent = "⚠️ Teams under 10 employees may be too early for this structural audit."; warningEl.style.color = "var(--warning)"; }
+            else if (val > 250) { warningEl.textContent = "⚠️ Teams over 250 employees require customized enterprise planning structures."; warningEl.style.color = "var(--warning)"; }
+            else { warningEl.textContent = "✅ Matches target bracket (10–250 employees)."; warningEl.style.color = "var(--success)"; }
+        }
+        function toggleChip(element) {
+            const value = element.getAttribute('data-value');
+            if (selectedChallenges.has(value)) { selectedChallenges.delete(value); element.classList.remove('selected'); }
+            else { selectedChallenges.add(value); element.classList.add('selected'); }
+        }
+        function selectSlot(element) {
+            const slotBtns = document.querySelectorAll('.schedule-slot-btn');
+            slotBtns.forEach(btn => btn.classList.remove('selected'));
+            element.classList.add('selected');
+            selectedTimeSlot = element.getAttribute('data-time');
+        }
+        function validateStep(step) {
+            if (step === 1) {
+                const compName = document.getElementById('comp-name').value.trim();
+                const role = document.getElementById('user-role').value;
+                if (!compName) { alert("Please enter your company name."); return false; }
+                if (!role) { alert("Please select your role."); return false; }
+            } else if (step === 2) {
+                if (selectedChallenges.size === 0) { alert("Please select at least one organizational friction point."); return false; }
+            }
+            return true;
+        }
+        function navigateStep(direction) {
+            if (direction === 1 && !validateStep(currentFormStep)) { return; }
+            currentFormStep += direction;
+            const panes = document.querySelectorAll('.form-step');
+            panes.forEach(pane => pane.classList.remove('active'));
+            const targetPane = document.getElementById(`step-${currentFormStep}-pane`);
+            if (targetPane) targetPane.classList.add('active');
+            for (let i = 1; i <= totalFormSteps; i++) {
+                const dot = document.getElementById(`dot-${i}`);
+                if (i < currentFormStep) { dot.className = 'step-dot completed'; }
+                else if (i === currentFormStep) { dot.className = 'step-dot active'; }
+                else { dot.className = 'step-dot'; }
+            }
+            const progressPct = ((currentFormStep - 1) / (totalFormSteps - 1)) * 100;
+            document.getElementById('form-progress-bar').style.width = `${progressPct}%`;
+            const prevBtn = document.getElementById('form-prev-btn');
+            const nextBtn = document.getElementById('form-next-btn');
+            const submitBtn = document.getElementById('form-submit-btn');
+            if (currentFormStep === 1) { prevBtn.style.display = 'none'; nextBtn.style.display = 'block'; submitBtn.style.display = 'none'; }
+            else if (currentFormStep === totalFormSteps) { prevBtn.style.display = 'block'; nextBtn.style.display = 'none'; submitBtn.style.display = 'block'; }
+            else { prevBtn.style.display = 'block'; nextBtn.style.display = 'block'; submitBtn.style.display = 'none'; }
+        }
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('user-name').value.trim();
+            const email = document.getElementById('user-email').value.trim();
+            if (!name || !email) { alert("Please complete all contact details."); return; }
+            document.getElementById('sum-company').textContent = document.getElementById('comp-name').value;
+            document.getElementById('sum-headcount').textContent = `${document.getElementById('form-headcount-slider').value} Employees`;
+            document.getElementById('sum-time').textContent = selectedTimeSlot || "Selected later / Calendar invite";
+            document.getElementById('audit-form').style.display = 'none';
+            document.getElementById('form-progress-bar').parentElement.style.display = 'none';
+            document.getElementById('form-success-pane').style.display = 'block';
+        }
+        function resetBookingForm() {
+            currentFormStep = 1;
+            selectedChallenges.clear();
+            selectedTimeSlot = '';
+            document.getElementById('audit-form').reset();
+            document.querySelectorAll('.chip-option').forEach(chip => chip.classList.remove('selected'));
+            document.querySelectorAll('.schedule-slot-btn').forEach(btn => btn.classList.remove('selected'));
+            document.getElementById('audit-form').style.display = 'block';
+            document.getElementById('form-progress-bar').parentElement.style.display = 'flex';
+            document.getElementById('form-success-pane').style.display = 'none';
+            updateFormHeadcount(50);
+            navigateStep(0);
+        }
+        function toggleFaq(headerElement) {
+            const currentItem = headerElement.parentElement;
+            const isActive = currentItem.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
+            if (!isActive) { currentItem.classList.add('active'); }
+        }
+        const cities = ["Chicago, IL", "Austin, TX", "San Francisco, CA", "New York, NY", "Miami, FL", "Seattle, WA", "Boston, MA", "Atlanta, GA", "Denver, CO", "Dallas, TX"];
+        const roles = ["CEO", "Founder", "Business Owner", "VP of Operations", "COO"];
+        const times = ["3m ago", "12m ago", "28m ago", "45m ago", "1h ago", "2h ago"];
+        function triggerSocialToast() {
+            const randomCity = cities[Math.floor(Math.random() * cities.length)];
+            const randomRole = roles[Math.floor(Math.random() * roles.length)];
+            const randomTime = times[Math.floor(Math.random() * times.length)];
+            document.getElementById('toast-title').textContent = `${randomRole} from ${randomCity}`;
+            document.getElementById('toast-desc').textContent = `Booked a Leadership Audit ${randomTime}`;
+            const toast = document.getElementById('booking-toast');
+            toast.classList.add('show');
+            setTimeout(() => { toast.classList.remove('show'); }, 5000);
+        }
+        setTimeout(triggerSocialToast, 4000);
+        setInterval(triggerSocialToast, 25000);
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('active'); observer.unobserve(entry.target); } });
+        }, { threshold: 0.15 });
+        revealElements.forEach(el => revealOnScroll.observe(el));
+    </script>
+</body>
+</html>
