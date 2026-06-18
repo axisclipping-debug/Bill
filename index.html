@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#0a1028">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>The Accountability & Alignment Audit | Free for CEOs & Founders</title>
-    <meta name="description" content="Identify the leadership bottlenecks slowing your team, decision-making, and growth. Free 60-minute audit for CEOs & Founders leading 10-250 employee companies.">
+    <meta name="description" content="Identify the leadership bottlenecks slowing your team, decision-making, and growth. Free 30-minute audit for CEOs & Founders leading 10-250 employee companies.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -34,6 +37,10 @@
         })(window, document, "clarity", "script", "x5q98ez3sw");
     </script>
     <!-- End Microsoft Clarity -->
+    <!-- Calendly Popup Widget -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <!-- End Calendly Popup Widget -->
     <style>
         :root {
             --bg-dark: #0a1028;
@@ -58,8 +65,8 @@
             --font-body: 'Inter', sans-serif;
             --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
         body {
             background-color: var(--bg-dark);
             color: var(--text-main);
@@ -80,14 +87,14 @@
         .text-center { text-align: center; }
         .glass-card { background: var(--bg-card); border: 1px solid var(--border-glow); backdrop-filter: blur(12px); border-radius: 16px; padding: 32px; transition: var(--transition-smooth); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); }
         .glass-card:hover { border-color: var(--border-glow-hover); transform: translateY(-4px); box-shadow: 0 12px 40px 0 rgba(201, 161, 76, 0.1); }
-        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 28px; font-family: var(--font-display); font-size: 1rem; font-weight: 600; border-radius: 8px; border: none; cursor: pointer; transition: var(--transition-smooth); text-decoration: none; gap: 10px; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 28px; font-family: var(--font-display); font-size: 1rem; font-weight: 600; border-radius: 8px; border: none; cursor: pointer; transition: var(--transition-smooth); text-decoration: none; gap: 10px; touch-action: manipulation; }
         .btn-primary { background: linear-gradient(135deg, var(--primary) 0%, #ad8730 100%); color: var(--bg-dark); box-shadow: 0 4px 20px var(--primary-glow); }
         .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(201, 161, 76, 0.7); background: linear-gradient(135deg, #ad8730 0%, #927124 100%); }
         .btn-secondary { background: transparent; border: 1px solid rgba(255, 255, 255, 0.2); color: var(--white); }
         .btn-secondary:hover { background: rgba(255, 255, 255, 0.05); border-color: var(--white); transform: translateY(-2px); }
         .btn-teal { background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-hover) 100%); color: var(--bg-dark); box-shadow: 0 4px 20px var(--secondary-glow); }
         .btn-teal:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(212, 175, 95, 0.7); }
-        header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(10, 16, 40, 0.7); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); padding: 18px 0; }
+        header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(10, 16, 40, 0.7); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); padding: 18px 0; padding-top: max(18px, env(safe-area-inset-top)); }
         .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
         .logo { font-family: var(--font-display); font-weight: 800; font-size: 1.3rem; color: var(--white); text-decoration: none; letter-spacing: 0.05em; display: flex; align-items: center; gap: 8px; }
         .logo span { color: var(--primary); }
@@ -260,7 +267,7 @@
         @media (max-width: 768px) {
             .testimonial-grid { grid-template-columns: 1fr !important; }
             header { padding: 14px 0; }
-            .nav-cta .btn { display: none; }
+            .nav-tag { display: none; }
             .hero { padding: 120px 0 60px 0; }
             .hero h1 { font-size: 2.4rem; }
             .hero p.lead { font-size: 1rem; }
@@ -278,6 +285,19 @@
             .schedule-grid { grid-template-columns: 1fr; }
             .footer-grid { flex-direction: column; text-align: center; }
             .footer-links { justify-content: center; flex-wrap: wrap; }
+        }
+        @media (max-width: 480px) {
+            .hero { padding: 110px 0 48px 0; }
+            .hero h1 { font-size: 2rem; }
+            .hero-bullets { grid-template-columns: 1fr; }
+            .roles-grid { grid-template-columns: 1fr; gap: 16px; }
+            .role-card { padding: 28px 20px; }
+            .comparison-panel { padding: 24px 20px; }
+            .roadmap-content-display { padding: 20px; }
+            .bio-stats { gap: 8px; }
+            .bio-stat-card { padding: 12px 8px; }
+            .bio-stat-val { font-size: 1.15rem; }
+            .booking-card { padding: 24px 16px; }
         }
     </style>
 </head>
@@ -416,7 +436,7 @@
         <div class="container">
             <div class="section-header text-center">
                 <h2>What You Get in the Audit</h2>
-                <p>A structured, high-intensity review of your leadership dynamics. In 60 minutes, we look under the hood of your operations and hand you a blueprint to eliminate alignment leaks.</p>
+                <p>A structured, high-intensity review of your leadership dynamics. In 30 minutes, we look under the hood of your operations and hand you a blueprint to eliminate alignment leaks.</p>
             </div>
             <div class="roadmap-tabs-container">
                 <div class="roadmap-steps-header">
@@ -582,10 +602,11 @@
             <div class="booking-card">
                 <div class="booking-header">
                     <h2>Find the 3 Bottlenecks Slowing Your Team</h2>
-                    <p style="font-size: 0.95rem;">Pick a time below for your free 30 minute call with Dr. Bill Harbron.</p>
+                    <p style="font-size: 0.95rem;">Click below to pick a time for your free 30 minute call with Dr. Bill Harbron.</p>
                 </div>
-                <div class="calendly-inline-widget" data-url="https://calendly.com/harbronwr/30min" style="min-width:320px;height:720px;border-radius:12px;overflow:hidden;"></div>
-                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                <div style="text-align: center;">
+                    <a href="https://calendly.com/harbronwr/30min" onclick="if(window.Calendly){Calendly.initPopupWidget({url: 'https://calendly.com/harbronwr/30min'});return false;}" class="btn btn-primary" style="padding: 16px 36px; font-size: 1.05rem;">Book My Free 30 Minute Call</a>
+                </div>
             </div>
         </div>
     </section>
@@ -593,7 +614,7 @@
         <div class="container">
             <div class="section-header text-center">
                 <h2>Frequently Asked Questions</h2>
-                <p>Have questions about how the 60-minute executive session works? Here are the answers.</p>
+                <p>Have questions about how the 30-minute executive session works? Here are the answers.</p>
             </div>
             <div class="faq-wrapper">
                 <div class="faq-item">
@@ -602,15 +623,15 @@
                 </div>
                 <div class="faq-item">
                     <div class="faq-header" onclick="toggleFaq(this)"><h3>Why do you restrict applications to companies with 10–250 employees?</h3><svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
-                    <div class="faq-body"><p>Companies within this size range face specific scaling friction points: moving from founder-driven execution to management systems. Teams with fewer than 10 employees do not have complex alignment challenges, and companies with more than 250 employees require enterprise governance reviews that cannot be resolved in a single 60-minute session.</p></div>
+                    <div class="faq-body"><p>Companies within this size range face specific scaling friction points: moving from founder-driven execution to management systems. Teams with fewer than 10 employees do not have complex alignment challenges, and companies with more than 250 employees require enterprise governance reviews that cannot be resolved in a single 30-minute session.</p></div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-header" onclick="toggleFaq(this)"><h3>What preparation is required before our session?</h3><svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
-                    <div class="faq-body"><p>Minimal preparation. Once approved, you will receive a quick 4-question onboarding form to outline your current reporting structure and key team deliverables. You will also want to make sure your core leadership team members (if joining) are available for the full 60 minutes.</p></div>
+                    <div class="faq-body"><p>Minimal preparation. Once approved, you will receive a quick 4-question onboarding form to outline your current reporting structure and key team deliverables. You will also want to make sure your core leadership team members (if joining) are available for the full 30 minutes.</p></div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-header" onclick="toggleFaq(this)"><h3>How long does it take to get our scorecard and action roadmap?</h3><svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
-                    <div class="faq-body"><p>You leave the actual 60-minute call with your primary action roadmap completed. Bill will compile your formalized Leadership Clarity Scorecard PDF and deliver it to your inbox within 24 hours of the audit session.</p></div>
+                    <div class="faq-body"><p>You leave the actual 30-minute call with your primary action roadmap completed. Bill will compile your formalized Leadership Clarity Scorecard PDF and deliver it to your inbox within 24 hours of the audit session.</p></div>
                 </div>
             </div>
         </div>
@@ -699,6 +720,14 @@
     });
 }, { rootMargin: '200px' });
 lazyVideos.forEach(video => videoLoadObserver.observe(video));
+
+        // Calendly booking completed -> fire Meta Pixel Lead event
+        window.addEventListener('message', function(e) {
+            if (e.origin !== 'https://calendly.com') return;
+            if (e.data && e.data.event === 'calendly.event_scheduled') {
+                fbq('track', 'Lead');
+            }
+        });
     </script>
 </body>
 </html>
